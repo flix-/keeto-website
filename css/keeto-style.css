@@ -7,7 +7,8 @@ body {
     display: flex;
     background-color: #252624;
     height: 100px;
-    border: none;
+    border-bottom: 1.5px solid;
+    border-color: black;
     font-size: 20px;
 }
 
@@ -41,12 +42,15 @@ body {
 }
 
 /* carousel */
-.carousel {
-    height: 750px;
+.carousel .item {
+    height: 800px;
 }
 
-.carousel .item {
-    height: 750px;
+.item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 800px;
 }
 
 #carousel-button {
