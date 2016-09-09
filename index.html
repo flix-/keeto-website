@@ -18,14 +18,14 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="100">
     <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-        <a class="navbar-left" href="#home"><img src="img/logo.png" alt="keeto"></a>
+        <a class="navbar-left" href="#home"><img src="img/logo.png" class="img-responsive"></a>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="page-scroll"><a href="#about">About</a></li>
-                <li class="page-scroll"><a href="#use-case">Use Case</a></li>
-                <li class="page-scroll"><a href="#docs">Docs</a></li>
-                <li class="page-scroll"><a href="#download">Download</a></li>
-                <li class="page-scroll"><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#use-case">Use Case</a></li>
+                <li><a href="http://www.google.de" target="_blank">Docs</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -42,21 +42,21 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="img/carousel-1.jpg">
+                    <img src="img/carousel-1.jpg" class="img-responsive">
                     <div class="carousel-caption">
                         <h2>Use X.509 certificates for OpenSSH and leverage PKI processes for managing the key material</h2>
                         <p id="carousel-button"><a class="btn btn-lg btn-primary" href="#about" role="button">Learn more</a></p>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="img/carousel-2.jpg">
+                    <img src="img/carousel-2.jpg" class="img-responsive">
                     <div class="carousel-caption">
                         <h2>Centrally manage access to OpenSSH servers in an LDAP aware Directory Service</h2>
                         <p id="carousel-button"><a class="btn btn-lg btn-primary" href="#about" role="button">Learn more</a></p>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="img/carousel-3.jpg">
+                    <img src="img/carousel-3.jpg" class="img-responsive">
                     <div class="carousel-caption">
                         <h2>Automatize the distribution of OpenSSH key material</h2>
                         <p id="carousel-button"><a class="btn btn-lg btn-primary" href="#about" role="button">Learn more</a></p>
@@ -75,19 +75,16 @@
         </div>
     </div>
     <div class="container">
-        <div class="light-bg" id="about">
+        <div class="light-bg row" id="about">
             lorem ipsum
         </div>
-        <div class="dark-bg" id="use-case">
+        <div class="dark-bg row" id="use-case">
             lorem ipsum
         </div>
-        <div class="light-bg" id="docs">
+        <div class="light-bg row" id="download">
             lorem ipsum
         </div>
-        <div class="dark-bg" id="download">
-            lorem ipsum
-        </div>
-        <div class="light-bg" id="contact">
+        <div class="dark-bg row" id="contact">
             lorem ipsum
         </div>
     </div> <!-- container -->

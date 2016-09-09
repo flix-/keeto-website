@@ -45,14 +45,7 @@ body {
 
 /* carousel */
 .carousel .item {
-    height: 800px;
-}
-
-.item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-height: 800px;
+    height: 700px;
 }
 
 #carousel-button {
@@ -62,10 +55,12 @@ body {
 /* sections */
 .light-bg {
     background-color: white;
+    padding-top: 50px;
 }
 
 .dark-bg {
     background-color: whitesmoke;
+    padding-top: 50px;
 }
 
 #about {
@@ -73,10 +68,6 @@ body {
 }
 
 #use-case {
-    height: 1000px;
-}
-
-#docs {
     height: 1000px;
 }
 
