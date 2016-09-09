@@ -1,0 +1,83 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* navbar */
+.navbar {
+    display: flex;
+    background-color: #252624;
+    height: 100px;
+    border: none;
+    font-size: 20px;
+}
+
+.navbar-left > img {
+    position: relative;
+    height: 125px;
+    z-index: 100;
+}
+
+.navbar-collapse {
+    position: relative;
+    top: 25%;
+}
+
+.navbar .navbar-nav > li {
+    position: relative;
+    left: 10%;
+}
+
+.navbar .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar .navbar-nav .active > a {
+    border-bottom: red solid 2px;
+    background-color: transparent;
+}
+
+.navbar .navbar-nav .active > a:hover {
+    background-color: transparent;
+}
+
+/* carousel */
+.carousel {
+    height: 750px;
+}
+
+.carousel .item {
+    height: 750px;
+}
+
+#carousel-button {
+    margin-top: 40px;
+}
+
+/* sections */
+.light-bg {
+    background-color: white;
+}
+
+.dark-bg {
+    background-color: whitesmoke;
+}
+
+#about {
+    height: 1000px;
+}
+
+#use-case {
+    height: 1000px;
+}
+
+#docs {
+    height: 1000px;
+}
+
+#download {
+    height: 1000px;
+}
+
+#contact {
+    height: 1000px;
+}
