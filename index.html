@@ -86,7 +86,27 @@
         <!-- About -->
         <div class="light-bg row keeto-section" id="about">
             <div class="col-xs-6 col-padding">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                <p><strong>Keeto is a module for OpenSSH that enables profile-based administration of access permissions in a central LDAP aware Directory Service, adds support for X.509 certificates and takes care of the distribution of key material in an automated and secure manner.</strong></p>
+                <p>The fundamental idea behind is to leverage existing infrastructure usually found in larger enterprises for managing access to OpenSSH servers comprising the assignment and revocation of access permissions as well as the management of key material. In order to gain full advantage of Keeto a PKI, a Directory Service and a strong protection mechanism for private keys such as Smartcards should be present.</p>
+                Having all access permissions in a central repository highly simplifies its management with regards to the assignment/revocation and overview of permissions. Keeto represents access permissions through different profile types that are assigned to OpenSSH servers centrally in a LDAP aware Directory Service such as OpenLDAP or Active Directory. Currently two different profiles are supported enabling either direct access or the access of an account on behalf of another.</p>
+                <p>Proper key management is vital to maintain the security of services. This includes the secure generation of key material with approved tools and security parameters, the secure distribution and installation of keys and an appropriate key lifecycle management including the revocation, regeneration and removal of keys.<br>
+                OpenSSH uses its own key format that barely consists of the data needed for the cryptographic operation. In comparison to X.509 certificates there is<br>
+                <ul>
+                    <li>no binding to an identity</li>
+                    <li>no integrity protection</li>
+                    <li>no expiration</li>
+                    <li>no mechanism for revocation</li>
+                </ul>
+                This properties can lead to either manual processes or insecure handling of the key material. In a worst case scenario OpenSSH keys are<br>
+                <ul>
+                    <li>generated with unknown and unapproved tools possibly using unsecure algorithms</li>
+                    <li>transferred via non-integrity protected channels e.g. email or ticket</li>
+                    <li>not verified over a secure channel before installation</li>
+                    <li>deployed in an unsecure manner creating hard to detect backdoors</li>
+                    <li>not regenerated in certain intervals</li>
+                    <li>not removed from the server when access should not be permitted anymore</li>
+                </ul>
+                lorem ipsum</p>
             </div>
             <div class="col-xs-6 col-padding">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.

@@ -28,6 +28,7 @@ body {
 .navbar .navbar-nav > li {
     position: relative;
     left: 10%;
+    background-color: #252624;
 }
 
 .navbar .navbar-nav > li > a {
@@ -36,11 +37,11 @@ body {
 
 .navbar .navbar-nav .active > a {
     border-bottom: red solid 2px;
-    background-color: transparent;
 }
 
+.navbar .navbar-nav .active > a:visited,
 .navbar .navbar-nav .active > a:hover {
-    background-color: transparent;
+    background-color: #252624;
 }
 
 /* carousel */
