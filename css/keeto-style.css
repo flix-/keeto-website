@@ -1,6 +1,7 @@
 body {
     position: relative;
     font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
 }
 
 /* navbar */
@@ -39,6 +40,8 @@ body {
     border-bottom: red solid 2px;
 }
 
+.navbar .navbar-nav .active > a:link,
+.navbar .navbar-nav .active > a:active,
 .navbar .navbar-nav .active > a:visited,
 .navbar .navbar-nav .active > a:hover {
     background-color: #252624;
@@ -61,11 +64,28 @@ body {
 /* sections */
 .keeto-section {
     background-color: white;
-    border-bottom: 1.5px solid;
-    border-color: black;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-bottom: 2px dotted;
+    border-color: slategray;
+}
+
+.heading {
+    padding-bottom: 30px;
+}
+
+#use-case {
     height: 1000px;
 }
 
-.col-padding {
-    padding-top: 50px;
+#demo {
+    height: 1000px;
+}
+
+#download {
+    height: 1000px;
+}
+
+#contact {
+    height: 1000px;
 }

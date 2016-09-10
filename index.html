@@ -31,6 +31,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="#about">About</a></li>
                 <li><a href="#use-case">Use Case</a></li>
+                <li><a href="#demo">Demo</a></li>
                 <li><a href="http://www.google.de" target="_blank">Docs</a></li>
                 <li><a href="#download">Download</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -84,59 +85,105 @@
     </div>
     <div class="container">
         <!-- About -->
-        <div class="light-bg row keeto-section" id="about">
-            <div class="col-xs-6 col-padding">
-                <p><strong>Keeto is a module for OpenSSH that enables profile-based administration of access permissions in a central LDAP aware Directory Service, adds support for X.509 certificates and takes care of the distribution of key material in an automated and secure manner.</strong></p>
-                <p>The fundamental idea behind is to leverage existing infrastructure usually found in larger enterprises for managing access to OpenSSH servers comprising the assignment and revocation of access permissions as well as the management of key material. In order to gain full advantage of Keeto a PKI, a Directory Service and a strong protection mechanism for private keys such as Smartcards should be present.</p>
-                Having all access permissions in a central repository highly simplifies its management with regards to the assignment/revocation and overview of permissions. Keeto represents access permissions through different profile types that are assigned to OpenSSH servers centrally in a LDAP aware Directory Service such as OpenLDAP or Active Directory. Currently two different profiles are supported enabling either direct access or the access of an account on behalf of another.</p>
-                <p>Proper key management is vital to maintain the security of services. This includes the secure generation of key material with approved tools and security parameters, the secure distribution and installation of keys and an appropriate key lifecycle management including the revocation, regeneration and removal of keys.<br>
-                OpenSSH uses its own key format that barely consists of the data needed for the cryptographic operation. In comparison to X.509 certificates there is<br>
-                <ul>
-                    <li>no binding to an identity</li>
-                    <li>no integrity protection</li>
-                    <li>no expiration</li>
-                    <li>no mechanism for revocation</li>
-                </ul>
-                This properties can lead to either manual processes or insecure handling of the key material. In a worst case scenario OpenSSH keys are<br>
-                <ul>
-                    <li>generated with unknown and unapproved tools possibly using unsecure algorithms</li>
-                    <li>transferred via non-integrity protected channels e.g. email or ticket</li>
-                    <li>not verified over a secure channel before installation</li>
-                    <li>deployed in an unsecure manner creating hard to detect backdoors</li>
-                    <li>not regenerated in certain intervals</li>
-                    <li>not removed from the server when access should not be permitted anymore</li>
-                </ul>
-                lorem ipsum</p>
+        <div class="keeto-section" id="about">
+            <div class="row heading">
+                <div class="col-xs-12">
+                    <h2 class="text-center">What is <em>Keeto</em>?</h2>
+                </div>
             </div>
-            <div class="col-xs-6 col-padding">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            <div class="row">
+                <div class="col-xs-6 text-justify">
+                    <p><strong><em>Keeto</em> is a module for OpenSSH that enables profile-based administration of access permissions in a central LDAP aware Directory Service, adds support for X.509 certificates and handles the distribution of OpenSSH key material in an automated and secure manner.</strong></p>
+                    <p>The fundamental idea behind is to leverage existing infrastructure usually found in larger enterprises for managing access to OpenSSH servers comprising the assignment and revocation of access permissions and the management of keys. In order to gain full advantage of <em>Keeto</em> a PKI and a Directory Service have to be present. Optionally a strong protection mechanism for private keys such as Smartcards can be used to increase the level of security.</p>
+                    Having all access permissions in a central repository highly simplifies its management with regards to the assignment/revocation and overview of permissions. <em>Keeto</em> represents access permissions through different profile types that are assigned to OpenSSH servers centrally in an LDAP aware Directory Service such as OpenLDAP or Active Directory. Currently two different profiles are supported enabling either direct access or the access of an account on behalf of another.</p>
+                    <p>Proper key management is vital to maintain the security of services. This includes the secure generation of key material with approved tools and security parameters, the secure distribution and installation of keys and an appropriate key lifecycle management including the revocation, regeneration and removal of keys.<br>
+                    OpenSSH uses its own key format that barely consists of the data needed for the cryptographic operation during authentication. In comparison to X.509 certificates there is<br>
+                    <ul>
+                        <li>no binding to an identity</li>
+                        <li>no integrity protection</li>
+                        <li>no expiration</li>
+                        <li>no mechanism for revocation</li>
+                    </ul>
+                    This properties can lead either to manual processes or insecure handling of the key material. In a worst case scenario OpenSSH keys are<br>
+                    <ul>
+                        <li>generated with unknown and unapproved tools using unsecure algorithms</li>
+                        <li>distributed via non-integrity protected channels such as email or ticketing systems</li>
+                        <li>not verified over a secure channel before installation</li>
+                        <li>deployed in an unsecure manner creating hard to detect backdoors</li>
+                        <li>not regenerated in certain intervals</li>
+                        <li>not removed from the server when access should not be permitted anymore</li>
+                        <li>not revocable in a well-defined way</li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 text-justify">
+                    Those issues can be tackled with a product solely focussing on the management of OpenSSH keys. However if a PKI is present this will lead to two extensive software layers and processes that need to be maintained for the management of key material.</p>
+                    <p>Instead of managing OpenSSH keys himself <em>Keeto</em> introduces support for X.509 certificates to OpenSSH. As X.509 certificates are already managed by a PKI no new processes e.g. for key generation, periodical regeneration or revocation have to be established. The distribution and proper installation of OpenSSH keys is handled by <em>Keeto</em> on each connection attempt after access permissions and the X.509 certificate have been successfully verified.</p>
+                    <p>The following diagram shows a high level overview about the different entities and their relationship:</p>
+                </div>
             </div>
         </div>
         <!-- Use Case -->
-        <div class="dark-bg row keeto-section" id="use-case">
-            <div class="col-xs-6 col-padding">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        <div class="keeto-section" id="use-case">
+            <div class="row heading">
+                <div class="col-xs-12">
+                    <h2 class="text-center">???</h2>
+                </div>
             </div>
-            <div class="col-xs-6 col-padding">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            <div class="row">
+                <div class="col-xs-6 text-justify">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+                <div class="col-xs-6 text-justify">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.               
+                </div>
+            </div>
+        </div>
+        <!-- Demo -->
+        <div class="keeto-section" id="demo">
+            <div class="row heading">
+                <div class="col-xs-12">
+                    <h2 class="text-center">???</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 text-justify">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+                <div class="col-xs-6 text-justify">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.               
+                </div>
             </div>
         </div>
         <!-- Download -->
-        <div class="light-bg row keeto-section" id="download">
-            <div class="col-xs-6 col-padding">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        <div class="keeto-section" id="download">
+            <div class="row heading">
+                <div class="col-xs-12">
+                    <h2 class="text-center">???</h2>
+                </div>
             </div>
-            <div class="col-xs-6 col-padding">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            <div class="row">
+                <div class="col-xs-6 text-justify">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+                <div class="col-xs-6 text-justify">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.               
+                </div>
             </div>
-        </div>
+        </div>        
         <!-- Contact -->
-        <div class="dark-bg row keeto-section" id="contact">
-            <div class="col-xs-6 col-padding">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        <div class="keeto-section" id="contact">
+            <div class="row heading">
+                <div class="col-xs-12">
+                    <h2 class="text-center">???</h2>
+                </div>
             </div>
-            <div class="col-xs-6 col-padding">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            <div class="row">
+                <div class="col-xs-6 text-justify">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+                <div class="col-xs-6 text-justify">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.               
+                </div>
             </div>
         </div>
     </div> <!-- container -->
