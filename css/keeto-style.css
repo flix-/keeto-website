@@ -44,8 +44,13 @@ body {
 }
 
 /* carousel */
-.carousel .item {
+.carousel-inner {
     height: 700px;
+}
+
+.carousel-inner .item > img {
+    height: 700px;
+    width: 100%;
 }
 
 #carousel-button {
@@ -53,28 +58,13 @@ body {
 }
 
 /* sections */
-.light-bg {
+.keeto-section {
     background-color: white;
+    border-bottom: 1.5px solid;
+    border-color: black;
+    height: 1000px;
+}
+
+.col-padding {
     padding-top: 50px;
-}
-
-.dark-bg {
-    background-color: whitesmoke;
-    padding-top: 50px;
-}
-
-#about {
-    height: 1000px;
-}
-
-#use-case {
-    height: 1000px;
-}
-
-#download {
-    height: 1000px;
-}
-
-#contact {
-    height: 1000px;
 }
