@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/keeto-style.css">
 </head>
 
-<body data-spy="scroll" data-target="#navbar" data-offset="100">
+<body data-spy="scroll" data-target="#navbar" data-offset="125">
     <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -25,13 +25,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-left" href="#home"><img src="img/logo.png" class="img-responsive"></a>
+            <a class="navbar-left" href="#home"><img src="images/logo.png" class="img-responsive"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="#about">About</a></li>
-                <li><a href="#use-case">Use Case</a></li>
-                <li><a href="#demo">Demo</a></li>
+                <li><a href="#examples">Examples</a></li>
                 <li><a href="http://www.google.de" target="_blank">Docs</a></li>
                 <li><a href="#download">Download</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -51,23 +50,23 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="img/carousel-1.jpg" class="img-responsive">
+                    <img src="images/carousel-1.jpg" class="img-responsive">
                     <div class="carousel-caption">
                         <h2>Use X.509 certificates for OpenSSH and leverage PKI processes for managing the key material</h2>
                         <p id="carousel-button"><a class="btn btn-lg btn-primary" href="#about" role="button">Learn more</a></p>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="img/carousel-2.jpg" class="img-responsive">
+                    <img src="images/carousel-2.jpg" class="img-responsive">
                     <div class="carousel-caption">
                         <h2>Centrally manage access to OpenSSH servers in an LDAP aware Directory Service</h2>
                         <p id="carousel-button"><a class="btn btn-lg btn-primary" href="#about" role="button">Learn more</a></p>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="img/carousel-3.jpg" class="img-responsive">
+                    <img src="images/carousel-3.jpg" class="img-responsive">
                     <div class="carousel-caption">
-                        <h2>Automatize the distribution of OpenSSH key material</h2>
+                        <h2>Automatize the distribution and installation of OpenSSH key material</h2>
                         <p id="carousel-button"><a class="btn btn-lg btn-primary" href="#about" role="button">Learn more</a></p>
                     </div>
                 </div>
@@ -86,66 +85,55 @@
     <div class="container">
         <!-- About -->
         <div class="keeto-section" id="about">
-            <div class="row heading">
+            <div class="row top-buffer">
                 <div class="col-xs-12">
                     <h2 class="text-center">What is <em>Keeto</em>?</h2>
                 </div>
             </div>
-            <div class="row">
+            <div class="row top-buffer">
                 <div class="col-xs-6 text-justify">
                     <p><strong><em>Keeto</em> is a module for OpenSSH that enables profile-based administration of access permissions in a central LDAP aware Directory Service, adds support for X.509 certificates and handles the distribution of OpenSSH key material in an automated and secure manner.</strong></p>
-                    <p>The fundamental idea behind is to leverage existing infrastructure usually found in larger enterprises for managing access to OpenSSH servers comprising the assignment and revocation of access permissions and the management of keys. In order to gain full advantage of <em>Keeto</em> a PKI and a Directory Service have to be present. Optionally a strong protection mechanism for private keys such as Smartcards can be used to increase the level of security.</p>
-                    Having all access permissions in a central repository highly simplifies its management with regards to the assignment/revocation and overview of permissions. <em>Keeto</em> represents access permissions through different profile types that are assigned to OpenSSH servers centrally in an LDAP aware Directory Service such as OpenLDAP or Active Directory. Currently two different profiles are supported enabling either direct access or the access of an account on behalf of another.</p>
+                    <p>The fundamental idea behind is to leverage existing infrastructure usually found in larger enterprises for managing access to OpenSSH servers comprising the assignment and revocation of access permissions and the management of keys. In order to gain full advantage of <em>Keeto</em> a PKI and a Directory Service have to be present. Optionally a strong protection mechanism for private keys such as a Smartcard can be used to increase the level of security.</p>
+                    Having all access permissions in a central repository highly simplifies its management with regards to the assignment/revocation and overview of permissions. <em>Keeto</em> represents access permissions through different profile types that are assigned to OpenSSH servers centrally in an LDAP aware Directory Service such as OpenLDAP or Active Directory. Currently two different profile types are supported enabling either direct access or access on behalf of another account.</p>
                     <p>Proper key management is vital to maintain the security of services. This includes the secure generation of key material with approved tools and security parameters, the secure distribution and installation of keys and an appropriate key lifecycle management including the revocation, regeneration and removal of keys.<br>
-                    OpenSSH uses its own key format that barely consists of the data needed for the cryptographic operation during authentication. In comparison to X.509 certificates there is<br>
+                    OpenSSH uses its own key format that solely consists of the data needed for the cryptographic operation during authentication. In comparison to X.509 certificates there is<br>
                     <ul>
                         <li>no binding to an identity</li>
                         <li>no integrity protection</li>
                         <li>no expiration</li>
                         <li>no mechanism for revocation</li>
                     </ul>
-                    This properties can lead either to manual processes or insecure handling of the key material. In a worst case scenario OpenSSH keys are<br>
+                </div>
+                <div class="col-xs-6 text-justify">
+                    This properties can lead to either manual processes or insecure handling of the key material. In a worst case scenario OpenSSH keys are<br>
                     <ul>
                         <li>generated with unknown and unapproved tools using unsecure algorithms</li>
                         <li>distributed via non-integrity protected channels such as email or ticketing systems</li>
                         <li>not verified over a secure channel before installation</li>
                         <li>deployed in an unsecure manner creating hard to detect backdoors</li>
                         <li>not regenerated in certain intervals</li>
-                        <li>not removed from the server when access should not be permitted anymore</li>
+                        <li>not in sync with actual access permissions</li>
                         <li>not revocable in a well-defined way</li>
                     </ul>
-                </div>
-                <div class="col-xs-6 text-justify">
-                    Those issues can be tackled with a product solely focussing on the management of OpenSSH keys. However if a PKI is present this will lead to two extensive software layers and processes that need to be maintained for the management of key material.</p>
+                    Those issues can be mitigated with a product solely focussing on the management of OpenSSH keys. However if a PKI is present this will result in two extensive software layers and processes that need to be maintained for the management of key material.</p>
                     <p>Instead of managing OpenSSH keys himself <em>Keeto</em> introduces support for X.509 certificates to OpenSSH. As X.509 certificates are already managed by a PKI no new processes e.g. for key generation, periodical regeneration or revocation have to be established. The distribution and proper installation of OpenSSH keys is handled by <em>Keeto</em> on each connection attempt after access permissions and the X.509 certificate have been successfully verified.</p>
-                    <p>The following diagram shows a high level overview about the different entities and their relationship:</p>
+                    <p>The following diagram shows a high level overview about the involved entities and their relationship:</p>
+                </div>
+            </div>
+            <div class="row top-buffer">
+                <div class="col-xs-12 col-xs-offset-1">
+                    <img src="images/keeto-high-level-flow.png" class="img-responsive">
                 </div>
             </div>
         </div>
-        <!-- Use Case -->
-        <div class="keeto-section" id="use-case">
-            <div class="row heading">
+        <!-- Examples -->
+        <div class="keeto-section" id="examples">
+            <div class="row top-buffer">
                 <div class="col-xs-12">
                     <h2 class="text-center">???</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-6 text-justify">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </div>
-                <div class="col-xs-6 text-justify">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.               
-                </div>
-            </div>
-        </div>
-        <!-- Demo -->
-        <div class="keeto-section" id="demo">
-            <div class="row heading">
-                <div class="col-xs-12">
-                    <h2 class="text-center">???</h2>
-                </div>
-            </div>
-            <div class="row">
+            <div class="row top-buffer">
                 <div class="col-xs-6 text-justify">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </div>
@@ -156,12 +144,12 @@
         </div>
         <!-- Download -->
         <div class="keeto-section" id="download">
-            <div class="row heading">
+            <div class="row top-buffer">
                 <div class="col-xs-12">
                     <h2 class="text-center">???</h2>
                 </div>
             </div>
-            <div class="row">
+            <div class="row top-buffer">
                 <div class="col-xs-6 text-justify">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </div>
@@ -172,12 +160,12 @@
         </div>        
         <!-- Contact -->
         <div class="keeto-section" id="contact">
-            <div class="row heading">
+            <div class="row top-buffer">
                 <div class="col-xs-12">
                     <h2 class="text-center">???</h2>
                 </div>
             </div>
-            <div class="row">
+            <div class="row top-buffer">
                 <div class="col-xs-6 text-justify">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </div>

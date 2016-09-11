@@ -2,6 +2,7 @@ body {
     position: relative;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+    background: url('../images/background.png') repeat center;
 }
 
 /* navbar */
@@ -63,22 +64,17 @@ body {
 
 /* sections */
 .keeto-section {
-    background-color: white;
-    padding-top: 20px;
-    padding-bottom: 40px;
+    /* background-color: white; */
+    padding-bottom: 50px;
     border-bottom: 2px dotted;
     border-color: slategray;
 }
 
-.heading {
-    padding-bottom: 30px;
+.top-buffer {
+    margin-top: 25px;
 }
 
-#use-case {
-    height: 1000px;
-}
-
-#demo {
+#examples {
     height: 1000px;
 }
 
