@@ -2,7 +2,7 @@ body {
     position: relative;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    background: url('../images/background.png') repeat center;
+    background: url('../img/background.png') repeat center;
 }
 
 /* navbar */
@@ -74,14 +74,19 @@ body {
     margin-top: 25px;
 }
 
-#examples {
+.content-slider li > img {
+    max-height: 500px;
+    max-width: 500;
+}
+
+#scroll_examples {
     height: 1000px;
 }
 
-#download {
+#scroll_download {
     height: 1000px;
 }
 
-#contact {
+#scroll_contact {
     height: 1000px;
 }

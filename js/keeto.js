@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    $('a[href^="#"]').on('click', function(e) {
+    /* smooth slide */
+    $('a[href^="#scroll_"]').on('click', function(e) {
         e.preventDefault();
 
         var offset = 125;
@@ -13,5 +14,14 @@ $(document).ready(function() {
 	        window.location.hash = target;
 	    });
 	});
-});
 
+    /* examples slider */
+    $('#examples-slider-dap').lightSlider({
+        item:1,
+        loop:false,
+        slideMove:1,
+        controls: true,
+        easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+        speed:600,
+    });
+});
