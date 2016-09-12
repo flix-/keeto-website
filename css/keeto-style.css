@@ -70,17 +70,12 @@ body {
     border-color: slategray;
 }
 
+.content-slider li > img {
+    margin: auto;
+}
+
 .top-buffer {
     margin-top: 25px;
-}
-
-.content-slider li > img {
-    max-height: 500px;
-    max-width: 500;
-}
-
-#scroll_examples {
-    height: 1000px;
 }
 
 #scroll_download {
