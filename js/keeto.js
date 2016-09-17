@@ -17,7 +17,7 @@ $(document).ready(function() {
 
     /* examples slider */
     $('#examples-slider-dap').lightSlider({
-        item:1,
+        item: 1,
         loop: true,
         keyPress: false,
         slideMove: 1,
@@ -27,7 +27,7 @@ $(document).ready(function() {
     });
 
     $('#examples-slider-aobp').lightSlider({
-        item:1,
+        item: 1,
         loop: true,
         keyPress: false,
         slideMove: 1,
