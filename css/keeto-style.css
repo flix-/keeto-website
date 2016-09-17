@@ -1,3 +1,8 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     position: relative;
     font-family: 'Open Sans', sans-serif;
@@ -78,10 +83,20 @@ body {
     margin-top: 25px;
 }
 
-#scroll_download {
-    height: 1000px;
+.bottom-buffer {
+    margin-bottom: 65px;
 }
 
-#scroll_contact {
-    height: 1000px;
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 75px;
+    background-color: #252624;
+}
+
+.footer p {
+    margin-top: 28px;
+    color: white;
 }
