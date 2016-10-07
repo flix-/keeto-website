@@ -117,7 +117,7 @@
                         <li>not revocable in a well-defined way</li>
                     </ul>
                     Those issues can be mitigated with a product solely focussing on the management of OpenSSH keys. However if a PKI is present this will result in two extensive software layers and processes that need to be maintained for the management of key material.</p>
-                    <p>Instead of managing OpenSSH keys himself <em>Keeto</em> introduces support for X.509 certificates to OpenSSH. As X.509 certificates are already managed by a PKI no new processes e.g. key generation, periodical regeneration or revocation have to be established. Furthermore the protocol between the SSH client and the OpenSSH server remains untouched so that every SSH aware client can be used transparently without any modification. The distribution and proper installation of OpenSSH keys is handled by <em>Keeto</em> on each connection attempt after access permissions and the X.509 certificate(s) have been successfully verified.</p>
+                    <p>Instead of managing OpenSSH keys himself <em>Keeto</em> introduces support for X.509 certificates to OpenSSH. As X.509 certificates are already managed by a PKI no new processes e.g. key generation, periodical regeneration or revocation have to be established. Furthermore the protocol between the SSH client and the OpenSSH server remains untouched. Every SSH aware client can be used transparently without any modification. The distribution and proper installation of OpenSSH keys is handled by <em>Keeto</em> on each connection attempt after access permissions and the X.509 certificate(s) have been successfully verified.</p>
                     <p>The following diagram shows a high level overview about the involved entities and their relationship:</p>
                 </div>
             </div>
@@ -144,17 +144,17 @@
                     <ul id="examples-slider-dap" class="content-slider">
                         <li>
                             <img src="img/examples-dap-1.png" class="img-responsive">
-                            <p class="text-center top-buffer">All people that should have access to an OpenSSH server need an entity with a uid and certificate set.<br>
+                            <p class="text-center top-buffer">All users that should have access to an OpenSSH server need an entity with a uid and certificate set.<br>
                             This is supposed to be already part of the DIT and managed by another application.</p>
                         </li>
                         <li>
                             <img src="img/examples-dap-2.png" class="img-responsive">
                             <p class="text-center top-buffer">For a direct access profile a group of key providers has to be specified.<br>
-                            All people in this group can access the associated OpenSSH server(s) directly.
+                            All users in this group can access the associated OpenSSH server(s) directly.
                         </li>
                         <li>
                             <img src="img/examples-dap-3.png" class="img-responsive">
-                            <p class="text-center top-buffer">A direct access profile is created and linked to the group of key providers.<br>
+                            <p class="text-center top-buffer">A direct access profile is created and the group of key providers linked to it.<br>
                             Optionally keystore options can be added (see next example).</p>
                         </li>
                         <li>
@@ -178,7 +178,7 @@
                     <ul id="examples-slider-aobp" class="content-slider">
                         <li>
                             <img src="img/examples-aobp-1.png" class="img-responsive">
-                            <p class="text-center top-buffer">In this example another person 'keeto-test-user' is provided access to an OpenSSH server.</p>
+                            <p class="text-center top-buffer">In this example another user 'keeto-test-user' is provided access to an OpenSSH server.</p>
                         </li>
                         <li>
                             <img src="img/examples-aobp-2.png" class="img-responsive">
@@ -194,11 +194,11 @@
                         </li>
                         <li>
                             <img src="img/examples-aobp-5.png" class="img-responsive">
-                            <p class="text-center top-buffer">A group with the technical users is created. This is later referred to as the target keystore.</p>
+                            <p class="text-center top-buffer">A group with the technical users is created. In terms of <em>keeto</em> this is called a target keystore.</p>
                         </li>
                         <li>
                             <img src="img/examples-aobp-6.png" class="img-responsive">
-                            <p class="text-center top-buffer">A group with people that can access the technical accounts in the target keystore group on behalf is created.</p>
+                            <p class="text-center top-buffer">A group of users is created that can access the technical accounts in the target keystore group on behalf.</p>
                         </li>
                         <li>
                             <img src="img/examples-aobp-7.png" class="img-responsive">
@@ -229,7 +229,7 @@
             </div>
             <div class="row top-buffer">
                 <div class="col-xs-12 text-justify">
-                    <p> Grab the latest source tarball <a href="https://github.com/flix-/keeto/archive/v0.1.0-beta.tar.gz"  target="_blank">here</a>. Older versions can be found at <a href="https://github.com/flix-/keeto" target="_blank"><i class="fa fa-github fa-2x"></i></a>. See the <a href="http://readthedocs.org" target="_blank">Docs</a> for installation and configuration guide.
+                    <p> Grab the latest source tarball <a href="https://github.com/flix-/keeto/archive/v0.1.0-beta.tar.gz"  target="_blank">here</a>. The latest development snapshot and older versions can be found at <a href="https://github.com/flix-/keeto" target="_blank"><i class="fa fa-github fa-2x"></i></a>. See the <a href="http://readthedocs.org" target="_blank">Docs</a> for installation and configuration guide.
                     </p>
                 </div>
             </div>
@@ -264,7 +264,19 @@
                         <li>Feature requests</li>
                         <li>Feedback</li>
                     </ul>
-                    <p>No time for active participation but still would like to contribute?! Keep our minds focused and donate us a coffee <a href="">todo</a> \o/</p>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_donations">
+                        <input type="hidden" name="business" value="seroland86@gmail.com">
+                        <input type="hidden" name="lc" value="GB">
+                        <input type="hidden" name="item_name" value="keeto">
+                        <input type="hidden" name="no_note" value="0">
+                        <input type="hidden" name="currency_code" value="EUR">
+                        <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+                        <p>No time for active participation but still would like to contribute?!<br>Keep our minds focused and
+                        <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                        us a coffee \o/</p>
+                        <img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+                    </form>
                 </div>
             </div>
         </div>
