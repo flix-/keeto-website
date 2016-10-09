@@ -97,16 +97,10 @@
                     <p>The fundamental idea behind is to leverage existing infrastructure usually found in larger enterprises for managing access to OpenSSH servers comprising the assignment and revocation of access permissions and the management of keys. In order to gain full advantage of <em>Keeto</em> a PKI and a Directory Service have to be present. Optionally a strong protection mechanism for private keys such as a Smartcard can be used to increase the level of security.</p>
                     Having all access permissions in a central repository highly simplifies its management with regards to the assignment/revocation and overview of permissions. <em>Keeto</em> represents access permissions through different access profile types that are assigned to OpenSSH servers centrally in an LDAP aware Directory Service such as OpenLDAP or Active Directory. Currently two different access profile types are supported enabling either direct access or access on behalf of another account.</p>
                     <p>Proper key management is vital to maintain the security of services. This includes the secure generation of key material with approved tools and security parameters, the secure distribution and installation of keys and an appropriate key lifecycle management including the revocation, regeneration and removal of keys.<br>
-                    OpenSSH uses its own key format that solely consists of the data needed for the cryptographic operation during authentication. In comparison to X.509 certificates there is<br>
-                    <ul>
-                        <li>no binding to an identity</li>
-                        <li>no integrity protection</li>
-                        <li>no expiration</li>
-                        <li>no mechanism for revocation</li>
-                    </ul>
+                    OpenSSH uses its own key format that solely consists of the data needed for the cryptographic operation during authentication. In comparison to X.509 certificates there is no binding to an identity, no integrity protection, no expiration and no mechanism for revocation.
                 </div>
                 <div class="col-xs-6 text-justify">
-                    This properties can lead to either manual processes or insecure handling of the key material. In a worst case scenario OpenSSH keys are<br>
+                    <p>This properties can lead to either manual processes or insecure handling of the key material. In a worst case scenario OpenSSH keys are</p>
                     <ul>
                         <li>generated with unknown and unapproved tools using unsecure algorithms</li>
                         <li>distributed via non-integrity protected channels such as email or ticketing systems</li>
@@ -116,7 +110,7 @@
                         <li>not in sync with actual access permissions</li>
                         <li>not revocable in a well-defined way</li>
                     </ul>
-                    Those issues can be mitigated with a product solely focussing on the management of OpenSSH keys. However if a PKI is present this will result in two extensive software layers and processes that need to be maintained for the management of key material.</p>
+                    <p>Those issues can be mitigated with a product solely focussing on the management of OpenSSH keys. However if a PKI is present this will result in two extensive software layers and processes that need to be maintained for the management of key material.</p>
                     <p>Instead of managing OpenSSH keys himself <em>Keeto</em> introduces support for X.509 certificates to OpenSSH. As X.509 certificates are already managed by a PKI no new processes e.g. key generation, periodical regeneration or revocation have to be established. Furthermore the protocol between the SSH client and the OpenSSH server remains untouched. Every SSH aware client can be used transparently without any modification. The distribution and proper installation of OpenSSH keys is handled by <em>Keeto</em> on each connection attempt after access permissions and the X.509 certificate(s) have been successfully verified.</p>
                     <p>The following diagram shows a high level overview about the involved entities and their relationship:</p>
                 </div>
@@ -229,7 +223,7 @@
             </div>
             <div class="row top-buffer">
                 <div class="col-xs-12 text-justify">
-                    <p> Grab the latest source tarball <a href="https://github.com/flix-/keeto/archive/v0.1.0-beta.tar.gz"  target="_blank">here</a>. The latest development snapshot and older versions can be found at <a href="https://github.com/flix-/keeto" target="_blank"><i class="fa fa-github fa-2x"></i></a>. See the <a href="http://readthedocs.org" target="_blank">Docs</a> for installation and configuration guide.
+                    <p> Grab the latest source tarball <a href="https://github.com/flix-/keeto/archive/v0.1.0-beta.tar.gz"  target="_blank">here</a>. The latest development snapshot and older versions can be found at <a href="https://github.com/flix-/keeto" target="_blank"><i class="fa fa-github fa-2x"></i></a>. See the <a href="https://keeto.readthedocs.io/en/latest/" target="_blank">Docs</a> for installation and configuration guide.
                     </p>
                 </div>
             </div>
