@@ -5,9 +5,14 @@ html {
 
 body {
     position: relative;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Exo 2', sans-serif;
     font-size: 16px;
-    background: url('../img/background.png') repeat center;
+    background-color: white;
+}
+
+/* bold */
+.heading {
+    font-family: 'Bitter', serif;
 }
 
 /* navbar */
