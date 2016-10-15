@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/keeto.css">
 </head>
 
-<body data-spy="scroll" data-target="#navbar" data-offset="125">
+<body data-spy="scroll" data-target="#navbar" data-offset="126">
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -60,7 +60,7 @@
         <div class="keeto-section" id="scroll_about">
             <div class="row top-buffer">
                 <div class="col-xs-12">
-                    <h2 class="text-center heading">What is <em>Keeto</em>?</h2>
+                    <h2 class="text-center heading"><em>Keeto</em>?!</h2>
                 </div>
             </div>
             <div class="row top-buffer">
@@ -68,7 +68,7 @@
                     <p><strong><em>Keeto</em> is a module for OpenSSH that enables profile-based administration of access permissions in a central LDAP aware Directory Service, adds support for X.509 certificates and handles the distribution of OpenSSH key material in an automated and secure manner.</strong></p>
                     <p>The fundamental idea behind is to leverage existing infrastructure usually found in larger enterprises for managing access to OpenSSH servers comprising the assignment and revocation of access permissions and the management of keys. In order to gain full advantage of <em>Keeto</em> a PKI and a Directory Service have to be present. Optionally a strong protection mechanism for private keys such as a Smartcard can be used to increase the level of security.</p>
                     Having all access permissions in a central repository highly simplifies its management with regards to the assignment/revocation and overview of permissions. <em>Keeto</em> represents access permissions through different access profile types that are assigned to OpenSSH servers centrally in an LDAP aware Directory Service such as OpenLDAP or Active Directory. Two different access profile types are supported enabling either direct access or access on behalf of another account.</p>
-                    <p>Proper key management is vital to maintain the security of services. This includes the secure generation of key material with approved tools and security parameters, the secure distribution and installation of keys and an appropriate key lifecycle management including the revocation, regeneration and removal of keys.</p>
+                    <p>Proper key management is vital to maintain the security of services. This comprises the secure generation of key material with approved tools and security parameters, the secure distribution and installation of keys and an appropriate key lifecycle management including the revocation, regeneration and removal of keys.</p>
                     <p>OpenSSH uses its own key format that solely consists of the data needed for the cryptographic operation during authentication. In comparison to X.509 certificates there is no binding to an identity, no integrity protection, no expiration and no mechanism for revocation.</p>
                 </div>
                 <div class="col-xs-6 text-justify">
@@ -88,8 +88,8 @@
                 </div>
             </div>
             <div class="row top-buffer">
-                <div class="col-xs-12 col-xs-offset-1">
-                    <img src="img/keeto-high-level-flow.png" class="img-responsive">
+                <div class="col-xs-12">
+                    <img src="img/keeto-high-level-flow.png" class="img-responsive shrink-image">
                 </div>
             </div>
         </div>
@@ -212,7 +212,8 @@
             </div>
             <div class="row top-buffer bottom-buffer">
                 <div class="col-xs-6 text-justify">
-                    You have a question, suggestion or just wanna say 'Hi'? Feel free to reach out over the following channels:
+                    <p>You have a question, suggestion or just wanna say 'Hi'?<br>
+                    Feel free to reach out!</p>
                     <ul class="top-buffer fa-ul">
                         <li><i class="fa fa-hashtag"></i> #<em>keeto</em> @<a href="https://freenode.net/" target="_blank">freenode</a> or /query flix</li>
                         <li><i class="fa fa-envelope"></i> <a href="mailto:info@keeto.io">info[at]<em>keeto</em>.io</a></li>
@@ -220,7 +221,8 @@
                     </ul>
                 </div>
                 <div class="col-xs-6 text-justify">
-                    <p>You like the project and want to join? Feel free to become part of it. Currently searching for:</p>
+                    <p>You like the project and want to join? Feel free to become part!<br>
+                    Currently searching for:</p>
                     <ul>
                         <li>Packagers</li>
                         <li>Code reviewers</li>

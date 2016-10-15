@@ -12,6 +12,15 @@ body {
     color: #3F3636;
 }
 
+.img-responsive {
+    margin: 0 auto;
+}
+
+.shrink-image {
+    width: 90%;
+    height: auto;
+}
+
 /* bold */
 .heading {
     font-family: 'Bitter', serif;
