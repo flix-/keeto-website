@@ -15,6 +15,19 @@ $(document).ready(function() {
 	    });
 	});
 
+    /* header slider */
+    $('#header-slider').lightSlider({
+        item: 1,
+        loop: true,
+        keyPress: false,
+        auto: true,
+        slideMove: 1,
+        controls: true,
+        easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+        speed: 2000,
+        pause: 7000
+    });
+
     /* examples slider */
     $('#examples-slider-dap').lightSlider({
         item: 1,
@@ -23,7 +36,7 @@ $(document).ready(function() {
         slideMove: 1,
         controls: true,
         easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-        speed: 600,
+        speed: 600
     });
 
     $('#examples-slider-aobp').lightSlider({
@@ -33,6 +46,6 @@ $(document).ready(function() {
         slideMove: 1,
         controls: true,
         easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-        speed: 600,
+        speed: 600
     });
 });

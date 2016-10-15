@@ -5,9 +5,11 @@ html {
 
 body {
     position: relative;
+    padding-top: 125px; /* adjust to prevent overlapping of header */
     font-family: 'Exo 2', sans-serif;
     font-size: 16px;
     background-color: white;
+    color: #3F3636;
 }
 
 /* bold */
@@ -17,13 +19,8 @@ body {
 
 /* navbar */
 .navbar {
-    display: flex;
-    background-color: #252624;
-    height: 100px;
-    border-bottom: 1.5px solid;
-    border-color: black;
-    font-size: 20px;
-    margin-bottom: 0;
+    background-color: #3F3636;
+    border-style: none;
 }
 
 .navbar-left > img {
@@ -32,15 +29,19 @@ body {
     z-index: 100;
 }
 
-.navbar-collapse {
+.navbar-nav {
     position: relative;
-    top: 25%;
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    font-size: 18px;
+    left: 5%;
+    margin-top: 35px;
 }
 
 .navbar .navbar-nav > li {
     position: relative;
-    left: 10%;
-    background-color: #252624;
+    background-color: #3F3636;
 }
 
 .navbar .navbar-nav > li > a {
@@ -48,28 +49,29 @@ body {
 }
 
 .navbar .navbar-nav .active > a {
-    border-bottom: red solid 2px;
+    border-bottom: #EDDD9A solid 2px;
 }
 
 .navbar .navbar-nav .active > a:link,
 .navbar .navbar-nav .active > a:active,
 .navbar .navbar-nav .active > a:visited,
 .navbar .navbar-nav .active > a:hover {
-    background-color: #252624;
+    background-color: #3F3636;
 }
 
-/* carousel */
-.carousel-inner {
-    height: 700px;
+/* header slider */
+#header-slider > li > img {
+    height: 550px;
 }
 
-.carousel-inner .item > img {
-    height: 700px;
-    width: 100%;
+.lSSlideOuter .lSPager.lSpg > li.active > a {
+    background-color: #EDDD9A !important;
 }
 
-#carousel-button {
-    margin-top: 40px;
+.lSSlideOuter .lSPager.lSpg > li > a:visited,
+.lSSlideOuter .lSPager.lSpg > li > a:hover,
+.lSSlideOuter .lSPager.lSpg > li > a:link {
+    background-color: #3F3636;
 }
 
 /* sections */
@@ -77,7 +79,7 @@ body {
     /* background-color: white; */
     padding-bottom: 50px;
     border-bottom: 2px dotted;
-    border-color: slategray;
+    border-color: #3F3636;
 }
 
 .content-slider li > img {
@@ -98,7 +100,7 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 75px;
-    background-color: #252624;
+    background-color: #3F3636;
 }
 
 .footer p {
