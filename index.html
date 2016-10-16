@@ -42,16 +42,19 @@
     <div id="scroll_home">
         <ul id="header-slider">
             <li>
-                <img src="img/carousel-1.png" class="img-responsive">
-                Use X.509 certificates for OpenSSH and leverage PKI processes for managing the key material
+                <img src="img/header-1.png" class="img-responsive">
+                <span class="heading text-uppercase" id="caption">Use X.509 certificates for OpenSSH and leverage PKI<br>
+                processes for managing the key material.</span>
             </li>
             <li>
-                <img src="img/carousel-2.png" class="img-responsive">
-                Centrally manage access to OpenSSH servers in an LDAP aware Directory Service
+                <img src="img/header-2.png" class="img-responsive">
+                <span class="heading text-uppercase" id="caption">Centrally manage access to OpenSSH Servers<br>
+                in an LDAP aware Directory Service.</span>
             </li>
             <li>
-                <img src="img/carousel-3.png" class="img-responsive">
-                Automatize the distribution and installation of OpenSSH key material
+                <img src="img/header-3.png" class="img-responsive">
+                <span class="heading text-uppercase" id="caption">Automatize the distribution and installation<br>
+                of OpenSSH key material.</span>
             </li>
         </ul>
     </div>
@@ -195,8 +198,47 @@
             </div>
             <div class="row top-buffer">
                 <div class="col-xs-12 text-justify">
-                    <p> Grab the latest source tarball <a href="https://github.com/flix-/keeto/archive/v0.1.0-beta.tar.gz"  target="_blank">here</a>. The latest development snapshot and older versions can be found at <a href="https://github.com/flix-/keeto" target="_blank"><i class="fa fa-github fa-2x"></i></a>. See the <a href="https://keeto.readthedocs.io/en/latest/" target="_blank">Docs</a> for installation and configuration guide.
-                    </p>
+                    <p><em>Keeto</em> is released under the terms of the GPLv3 license and actively developed by Sebastian Roland. The source code is hosted at <a href="https://github.com/flix-/keeto" target="_blank"><i class="fa fa-github fa-2x"></i></a> and freely available for everyone. Information on how to install and configure <em>Keeto</em> can be obtained from the <a href="https://keeto.readthedocs.io/en/latest/" target="_blank">Docs</a>.</p>
+                    <ul class="nav nav-tabs top-buffer">
+                        <li class="active"><a href="#download-020-beta" data-toggle="tab">0.2.0-beta</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active top-buffer" id="download-020-beta">
+                            <table>
+                                <tr>
+                                    <td style="padding-right:10px"><h4><span class="label label-info">2016-XX-XX</span></h4></td>
+                                    <td style="padding-right:10px"><h4><a href="https://www.google.de" class="no-link-decoration" target="_blank"><span class="label label-info">Changelog</span></a></h4></td>
+                                    <td style="padding-right:10px"><h4><a href="https://www.google.de" class="no-link-decoration" target="_blank"><span class="label label-info">Github</span></a></h4></td>
+                                </tr>
+                            </table>
+                            <table class="table top-buffer">
+                                <tr>
+                                    <td>.tgz</td>
+                                    <td><a href="http://www.google.de">keeto-0.2.0-beta.tar.gz</a></td>
+                                    <td>MD5: 9fc75f00314b837732cf030d60821abe<br>
+                                        SHA1: d5dad3e97f39bd48a4a4ece165207213497e92d7<br>
+                                        SHA256: d8ef262b94d7d81407531392a832ec89c8f253c264cbfecc6cd9bde35c2ef563<br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>.rpm</td>
+                                    <td>-</td>
+                                    <td>MD5: -<br>
+                                        SHA1: -<br>
+                                        SHA256: -<br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>.deb</td>
+                                    <td>-</td>
+                                    <td>MD5: -<br>
+                                        SHA1: -<br>
+                                        SHA256: -<br>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -212,8 +254,7 @@
             </div>
             <div class="row top-buffer bottom-buffer">
                 <div class="col-xs-6 text-justify">
-                    <p>You have a question, suggestion or just wanna say 'Hi'?<br>
-                    Feel free to reach out!</p>
+                    <p>You have a question, suggestion or just wanna say 'Hi'? Feel free to reach out!</p>
                     <ul class="top-buffer fa-ul">
                         <li><i class="fa fa-hashtag"></i> #<em>keeto</em> @<a href="https://freenode.net/" target="_blank">freenode</a> or /query flix</li>
                         <li><i class="fa fa-envelope"></i> <a href="mailto:info@keeto.io">info[at]<em>keeto</em>.io</a></li>
@@ -221,14 +262,12 @@
                     </ul>
                 </div>
                 <div class="col-xs-6 text-justify">
-                    <p>You like the project and want to join? Feel free to become part!<br>
-                    Currently searching for:</p>
+                    <p>You like the project and want to join? Your help is highly appreciated! Currently searching for:</p>
                     <ul>
                         <li>Packagers</li>
                         <li>Code reviewers</li>
                         <li>Test environments</li>
                         <li>Testers</li>
-                        <li>Feature requests</li>
                         <li>Feedback</li>
                     </ul>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -239,9 +278,8 @@
                         <input type="hidden" name="no_note" value="0">
                         <input type="hidden" name="currency_code" value="EUR">
                         <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
-                        <p>No time for active participation but still would like to contribute?!<br>Keep our minds focused and
-                        <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
-                        us a coffee \o/</p>
+                        <p>No time for active participation but still would like to contribute?!<br>
+                        Keep my mind focused and <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!"> a coffee \o/</p>
                         <img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
                     </form>
                 </div>

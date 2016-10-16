@@ -8,6 +8,7 @@ body {
     padding-top: 125px; /* adjust to prevent overlapping of header */
     font-family: 'Exo 2', sans-serif;
     font-size: 16px;
+    font-weight: normal;
     background-color: white;
     color: #3F3636;
 }
@@ -17,13 +18,14 @@ body {
 }
 
 .shrink-image {
-    width: 90%;
+    width: 85%;
     height: auto;
 }
 
 /* bold */
 .heading {
     font-family: 'Bitter', serif;
+    font-weight: 700;
 }
 
 /* navbar */
@@ -73,6 +75,15 @@ body {
     height: 550px;
 }
 
+/* header captions */
+#caption {
+    position: absolute;
+    bottom: 180px;
+    padding-left: 700px;
+    color: white;
+    font-size: 1.8vw;
+}
+
 .lSSlideOuter .lSPager.lSpg > li.active > a {
     background-color: #EDDD9A !important;
 }
@@ -103,6 +114,19 @@ body {
     margin-bottom: 65px;
 }
 
+/* download */
+.label-info {
+  background-color: #7884C0;
+}
+
+.no-link-decoration:hover,
+.no-link-decoration:visited,
+.no-link-decoration:link,
+.no-link-decoration:active {
+    text-decoration: none;
+}
+
+/* footer */
 .footer {
     position: absolute;
     bottom: 0;
