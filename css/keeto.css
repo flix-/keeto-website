@@ -13,6 +13,13 @@ body {
     color: #3F3636;
 }
 
+a:link,
+a:hover,
+a:visited,
+a:active {
+    color: #7884C0;
+}
+
 .img-responsive {
     margin: 0 auto;
 }
@@ -115,8 +122,21 @@ body {
 }
 
 /* download */
+.nav-tabs > li.active {
+    font-family: 'Bitter', serif;
+    font-weight: 700;
+}
+
 .label-info {
-  background-color: #7884C0;
+    background-color: #394070;
+    font-family: 'Bitter', serif;
+    font-weight: 700;
+}
+
+.label-link {
+    background-color: #7884C0;
+    font-family: 'Bitter', serif;
+    font-weight: 700;
 }
 
 .no-link-decoration:hover,
@@ -124,6 +144,10 @@ body {
 .no-link-decoration:link,
 .no-link-decoration:active {
     text-decoration: none;
+}
+
+.tab-pane .table {
+    margin-bottom: 0;
 }
 
 /* footer */

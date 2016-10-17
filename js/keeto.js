@@ -3,7 +3,7 @@ $(document).ready(function() {
     $('a[href^="#scroll_"]').on('click', function(e) {
         e.preventDefault();
 
-        var offset = 125;
+        var offset = 149;
         var target = this.hash;
         var $target = $(target);
         var target_offset = $target.offset().top - offset;
@@ -24,7 +24,7 @@ $(document).ready(function() {
         slideMove: 1,
         controls: true,
         easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-        speed: 2000,
+        speed: 1800,
         pause: 7000
     });
 
