@@ -5,7 +5,7 @@ html {
 
 body {
     position: relative;
-    padding-top: 125px; /* adjust to prevent overlapping of header */
+    padding-top: 6.0vw; /* adjust to prevent overlapping of header */
     font-family: 'Exo 2', sans-serif;
     font-size: 16px;
     font-weight: normal;
@@ -37,25 +37,24 @@ a:active {
 
 /* navbar */
 .navbar {
+    height: 6.0vw;
     background-color: #7884C0;
-    height: 125px;
     border-style: none;
 }
 
 .navbar-left > img {
     position: relative;
-    top: 15px;
-    left: 20%;
+    top: 0.5vw;
+    left: 22vw;
+    height: 8.0vw;
     z-index: 100;
 }
 
 .navbar-nav {
     position: relative;
-    display: inline-block;
     float: none;
-    vertical-align: top;
-    padding-top: 35px;
-    left: 6%;
+    margin-top: 1.5vw;
+    left: 23vw;
     font-family: 'Bitter', serif;
     font-weight: 700;
     font-size: 20px;
@@ -77,10 +76,71 @@ a:active {
 }
 
 .navbar .navbar-nav .active > a:link,
+.navbar .navbar-nav .active > a:focus,
 .navbar .navbar-nav .active > a:active,
 .navbar .navbar-nav .active > a:visited,
 .navbar .navbar-nav .active > a:hover {
     background-color: #7884C0;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+    width: 100%;
+}
+
+.navbar .navbar-collapse.in {
+    border-top: none;
+    box-shadow: none;
+}
+
+.navbar-inverse .navbar-toggle {
+    background-color: #7884C0;
+    border-style: none;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar,
+.navbar-inverse .navbar-toggle:link .icon-bar,
+.navbar-inverse .navbar-toggle:focus .icon-bar,
+.navbar-inverse .navbar-toggle:active .icon-bar {
+    background-color: #EDDD9A;
+}
+
+.navbar-inverse .navbar-toggle.collapsed:hover .icon-bar {
+    background-color: #EDDD9A;
+}
+
+.navbar-inverse .navbar-toggle.collapsed .icon-bar {
+    background-color: white;
+}
+
+.navbar-inverse .navbar-toggle:link,
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:active,
+.navbar-inverse .navbar-toggle:hover {
+    background-color: #7884C0;
+    border-style: none;
+}
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: #7884C0;
+    }
+    
+    .navbar-collapse a > img {
+        left: 2%;
+        height: 15vw;
+    }
+    
+    .navbar-nav {
+        position: relative;
+        float: none;
+        margin: 0 auto;
+        left: 0;
+        font-family: 'Bitter', serif;
+        font-weight: 700;
+        font-size: 20px;
+        color: white;
+    }
 }
 
 /* header slider */
@@ -92,8 +152,8 @@ a:active {
 /* header captions */
 #caption {
     position: absolute;
-    bottom: 130px;
-    padding-left: 700px;
+    bottom: 8.5vw;
+    padding-left: 35vw;
     color: white;
     font-size: 1.8vw;
 }
@@ -111,7 +171,7 @@ a:active {
 /* sections */
 .keeto-section {
     padding-bottom: 50px;
-    border-bottom: 2px dotted;
+    border-bottom: 0.15vw dotted;
     border-color: #3F3636;
 }
 
