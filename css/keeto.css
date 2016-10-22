@@ -54,10 +54,10 @@ a:active {
     position: relative;
     float: none;
     margin-top: 1.5vw;
-    left: 23vw;
+    left: 23.0vw;
     font-family: 'Bitter', serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 1.05vw;
     color: white;
 }
 
@@ -88,6 +88,7 @@ a:active {
     width: 100%;
 }
 
+.navbar .navbar-collapse.collapsing,
 .navbar .navbar-collapse.in {
     border-top: none;
     box-shadow: none;
@@ -125,21 +126,24 @@ a:active {
     .navbar-collapse {
         background-color: #7884C0;
     }
-    
+
     .navbar-collapse a > img {
         left: 2%;
         height: 15vw;
     }
-    
+
     .navbar-nav {
         position: relative;
-        float: none;
-        margin: 0 auto;
         left: 0;
         font-family: 'Bitter', serif;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 2.5vw;
         color: white;
+    }
+
+    .navbar .navbar-nav .active > a {
+        border-bottom: 2px solid;
+        border-color: #EDDD9A;
     }
 }
 
