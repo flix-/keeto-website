@@ -8,11 +8,9 @@ $(document).ready(function() {
         var $target = $(target);
         var target_offset = $target.offset().top - offset;
 
-	    $('html, body').stop().animate({
+	    $('html,body').stop().animate({
             'scrollTop': target_offset
-        }, 900, 'swing', function () {
-	        window.location.hash = target;
-	    });
+        }, 1500);
 	});
 
     /* header slider */
