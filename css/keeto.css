@@ -37,13 +37,15 @@ a:active {
 
 /* navbar */
 .navbar {
-    background-color: #3F3636;
+    background-color: #7884C0;
+    height: 125px;
     border-style: none;
 }
 
 .navbar-left > img {
     position: relative;
-    height: 125px;
+    top: 15px;
+    left: 20%;
     z-index: 100;
 }
 
@@ -52,14 +54,17 @@ a:active {
     display: inline-block;
     float: none;
     vertical-align: top;
-    font-size: 18px;
-    left: 5%;
-    margin-top: 35px;
+    padding-top: 35px;
+    left: 6%;
+    font-family: 'Bitter', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
 }
 
 .navbar .navbar-nav > li {
     position: relative;
-    background-color: #3F3636;
+    background-color: #7884C0;
 }
 
 .navbar .navbar-nav > li > a {
@@ -67,25 +72,27 @@ a:active {
 }
 
 .navbar .navbar-nav .active > a {
-    border-bottom: #EDDD9A solid 2px;
+    border-bottom: 3px solid;
+    border-color: #EDDD9A;
 }
 
 .navbar .navbar-nav .active > a:link,
 .navbar .navbar-nav .active > a:active,
 .navbar .navbar-nav .active > a:visited,
 .navbar .navbar-nav .active > a:hover {
-    background-color: #3F3636;
+    background-color: #7884C0;
 }
 
 /* header slider */
-#header-slider > li > img {
-    height: 600px;
+#header-slider {
+    border-top: 3px solid;
+    border-color: #EDDD9A;
 }
 
 /* header captions */
 #caption {
     position: absolute;
-    bottom: 180px;
+    bottom: 130px;
     padding-left: 700px;
     color: white;
     font-size: 1.8vw;
@@ -98,12 +105,11 @@ a:active {
 .lSSlideOuter .lSPager.lSpg > li > a:visited,
 .lSSlideOuter .lSPager.lSpg > li > a:hover,
 .lSSlideOuter .lSPager.lSpg > li > a:link {
-    background-color: #3F3636;
+    background-color: #7884C0;
 }
 
 /* sections */
 .keeto-section {
-    /* background-color: white; */
     padding-bottom: 50px;
     border-bottom: 2px dotted;
     border-color: #3F3636;
@@ -157,7 +163,7 @@ a:active {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 75px;
-    background-color: #3F3636;
+    background-color: #7884C0;
 }
 
 .footer p {
