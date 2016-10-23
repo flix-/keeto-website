@@ -25,7 +25,7 @@ a:active {
 }
 
 .shrink-image {
-    width: 85%;
+    width: 90%;
     height: auto;
 }
 
@@ -135,15 +135,15 @@ a:active {
 
 /* header slider captions */
 div.slider-image-1 {
-    content:url(../img/slider-1-desktop.png);
+    content: url(../img/slider-1-desktop.png);
 }
 
 div.slider-image-2 {
-    content:url(../img/slider-2-desktop.png);
+    content: url(../img/slider-2-desktop.png);
 }
 
 div.slider-image-3 {
-    content:url(../img/slider-3-desktop.png);
+    content: url(../img/slider-3-desktop.png);
 }
 
 #caption {
@@ -228,6 +228,52 @@ div.slider-image-3 {
 }
 
 /* media queries */
+@media (max-width: 1500px) {
+    .navbar-nav {
+        margin-top: 1.2vw;
+    }
+}
+
+@media (max-width: 1300px) {
+    .navbar-nav {
+        margin-top: 0.9vw;
+    }
+
+    .navbar .navbar-nav .active > a {
+        border-bottom: 2px solid;
+        border-color: #EDDD9A;
+    }
+
+    .navbar-nav >li > a {
+        padding-bottom: 10px;
+    }
+
+    .navbar .navbar-collapse.showBorder {
+        border-bottom: 2px solid;
+        border-color: #EDDD9A;
+    }
+}
+
+@media (max-width: 1100px) {
+    .navbar-nav {
+        margin-top: 0.5vw;
+    }
+
+    .navbar .navbar-nav .active > a {
+        border-bottom: 1px solid;
+        border-color: #EDDD9A;
+    }
+
+    .navbar-nav >li > a {
+        padding-bottom: 5px;
+    }
+
+    .navbar .navbar-collapse.showBorder {
+        border-bottom: 1px solid;
+        border-color: #EDDD9A;
+    }
+}
+
 @media (max-width: 767px) {
     body {
         position: relative;
@@ -264,28 +310,28 @@ div.slider-image-3 {
     }
 
     div.slider-image-1 {
-        content:url(../img/slider-1-tablet.png);
+        content: url(../img/slider-1-tablet.png);
     }
 
     div.slider-image-2 {
-        content:url(../img/slider-2-tablet.png);
+        content: url(../img/slider-2-tablet.png);
     }
 
     div.slider-image-3 {
-        content:url(../img/slider-3-tablet.png);
+        content: url(../img/slider-3-tablet.png);
     }
 }
 
 @media (max-width: 480px) {
     div.slider-image-1 {
-        content:url(../img/slider-1-smartphone.png);
+        content: url(../img/slider-1-smartphone.png);
     }
 
     div.slider-image-2 {
-        content:url(../img/slider-2-smartphone.png);
+        content: url(../img/slider-2-smartphone.png);
     }
 
     div.slider-image-3 {
-        content:url(../img/slider-3-smartphone.png);
+        content: url(../img/slider-3-smartphone.png);
     }
 }
