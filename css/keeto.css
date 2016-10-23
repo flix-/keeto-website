@@ -133,17 +133,17 @@ a:active {
     border-style: none;
 }
 
-/* header slider captions */
-div.slider-image-1 {
-    content: url(../img/slider-1-desktop.png);
+/* header slider */
+.slider-desktop {
+    display: block;
 }
 
-div.slider-image-2 {
-    content: url(../img/slider-2-desktop.png);
+.slider-tablet {
+    display: none;
 }
 
-div.slider-image-3 {
-    content: url(../img/slider-3-desktop.png);
+.slider-smartphone {
+    display: none;
 }
 
 #caption {
@@ -309,29 +309,29 @@ div.slider-image-3 {
         height: auto !important;
     }
 
-    div.slider-image-1 {
-        content: url(../img/slider-1-tablet.png);
+    .slider-desktop {
+        display: none;
     }
 
-    div.slider-image-2 {
-        content: url(../img/slider-2-tablet.png);
+    .slider-tablet {
+        display: block;
     }
 
-    div.slider-image-3 {
-        content: url(../img/slider-3-tablet.png);
+    .slider-smartphone {
+        display: none;
     }
 }
 
 @media (max-width: 480px) {
-    div.slider-image-1 {
-        content: url(../img/slider-1-smartphone.png);
+    .slider-desktop {
+        display: none;
     }
 
-    div.slider-image-2 {
-        content: url(../img/slider-2-smartphone.png);
+    .slider-tablet {
+        display: none;
     }
 
-    div.slider-image-3 {
-        content: url(../img/slider-3-smartphone.png);
+    .slider-smartphone {
+        display: block;
     }
 }
