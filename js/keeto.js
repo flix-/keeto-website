@@ -47,3 +47,18 @@ $(document).ready(function() {
         speed: 600
     });
 });
+
+$(document).on('scroll', function() {
+       if ($('.navbar .navbar-nav .active').length == 0 &&
+!$('#navbar').hasClass('showBorder')) {
+           $('#navbar').addClass('showBorder');
+       }
+    });
+
+    //Fired whenever a new menu item becomes active
+    //See https://getbootstrap.com/javascript/#scrollspy-events
+    $('[data-spy="scroll"]').on('activate.bs.scrollspy', function (e) {
+        if ($('#navbar').hasClass('showBorder')) {
+            $('#navbar').removeClass('showBorder');
+        }
+    });

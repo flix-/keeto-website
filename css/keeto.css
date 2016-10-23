@@ -40,6 +40,7 @@ a:active {
     height: 6.0vw;
     background-color: #7884C0;
     border-style: none;
+    margin: 0;
 }
 
 .navbar-left > img {
@@ -84,6 +85,16 @@ a:active {
 }
 
 .navbar .navbar-collapse {
+    height: 6.0vw !important;
+    background-color: #7884C0;
+}
+
+.navbar .navbar-collapse.showBorder {
+    border-bottom: 3px solid;
+    border-color: #EDDD9A;
+}
+
+.navbar .navbar-collapse {
     text-align: center;
     width: 100%;
 }
@@ -122,38 +133,19 @@ a:active {
     border-style: none;
 }
 
-@media (max-width: 768px) {
-    .navbar-collapse {
-        background-color: #7884C0;
-    }
-
-    .navbar-collapse a > img {
-        left: 2%;
-        height: 15vw;
-    }
-
-    .navbar-nav {
-        position: relative;
-        left: 0;
-        font-family: 'Bitter', serif;
-        font-weight: 700;
-        font-size: 2.5vw;
-        color: white;
-    }
-
-    .navbar .navbar-nav .active > a {
-        border-bottom: 2px solid;
-        border-color: #EDDD9A;
-    }
+/* header slider captions */
+div.slider-image-1 {
+    content:url(../img/slider-1-desktop.png);
 }
 
-/* header slider */
-#header-slider {
-    border-top: 3px solid;
-    border-color: #EDDD9A;
+div.slider-image-2 {
+    content:url(../img/slider-2-desktop.png);
 }
 
-/* header captions */
+div.slider-image-3 {
+    content:url(../img/slider-3-desktop.png);
+}
+
 #caption {
     position: absolute;
     bottom: 8.5vw;
@@ -233,4 +225,67 @@ a:active {
 .footer p {
     margin-top: 25px;
     color: white;
+}
+
+/* media queries */
+@media (max-width: 767px) {
+    body {
+        position: relative;
+        padding-top: 50px; /* adjust to prevent overlapping of header */
+    }
+
+    .navbar {
+        height: 50px;
+        margin: 0;
+    }
+
+    .navbar-collapse a > img {
+        left: 2%;
+        height: 15vw;
+    }
+
+    .navbar-nav {
+        position: relative;
+        float: none;
+        left: 0;
+        font-family: 'Bitter', serif;
+        font-weight: 700;
+        font-size: 2.5vw;
+        color: white;
+    }
+
+    .navbar .navbar-nav .active > a {
+        border-bottom: 2px solid;
+        border-color: #EDDD9A;
+    }
+
+    .navbar .navbar-collapse {
+        height: auto !important;
+    }
+
+    div.slider-image-1 {
+        content:url(../img/slider-1-tablet.png);
+    }
+
+    div.slider-image-2 {
+        content:url(../img/slider-2-tablet.png);
+    }
+
+    div.slider-image-3 {
+        content:url(../img/slider-3-tablet.png);
+    }
+}
+
+@media (max-width: 480px) {
+    div.slider-image-1 {
+        content:url(../img/slider-1-smartphone.png);
+    }
+
+    div.slider-image-2 {
+        content:url(../img/slider-2-smartphone.png);
+    }
+
+    div.slider-image-3 {
+        content:url(../img/slider-3-smartphone.png);
+    }
 }
