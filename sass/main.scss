@@ -1,5 +1,5 @@
-@import "slick-theme.scss";
 @import "slick.scss";
+@import "slick-theme.scss";
 @import "bootstrap";
 @import "keeto";
 
@@ -176,6 +176,120 @@ a
 					}
 					border-bottom: 2px solid $keeto-yellow;
 					background-color: transparent;
+				}
+			}
+		}
+	}
+}
+
+.main-content
+{
+	@include desktop()
+	{
+		margin-top: 75px;
+	}
+
+	@include tablet()
+	{
+		margin-top: 75px;
+	}
+
+	margin-top: 50px;
+}
+
+.header-slider
+{
+	.slide
+	{
+		@include desktop()
+		{
+			height: 600px;
+		}
+
+		@include tablet()
+		{
+			height: 400px;
+		}
+
+		width: 100%;
+		height: 150px;
+	}
+	.slide-first
+	{
+		@include desktop()
+		{
+			background: url('../img/slider-1-desktop.png') no-repeat;
+		}
+
+		@include tablet()
+		{
+			background: url('../img/slider-1-tablet.png') no-repeat;
+		}
+
+		background: url('../img/slider-1-smartphone.png') no-repeat;
+	}
+
+	.slide-second
+	{
+		@include desktop()
+		{
+			background: url('../img/slider-2-desktop.png') no-repeat;
+		}
+
+		@include tablet()
+		{
+			background: url('../img/slider-2-tablet.png') no-repeat;
+		}
+
+		background: url('../img/slider-2-smartphone.png') no-repeat;
+	}
+
+	.slide-third
+	{
+		@include desktop()
+		{
+			background: url('../img/slider-3-desktop.png') no-repeat;
+		}
+
+		@include tablet()
+		{
+			background: url('../img/slider-3-tablet.png') no-repeat;
+		}
+
+		background: url('../img/slider-3-smartphone.png') no-repeat;
+	}
+
+	.slick-prev
+	{
+		left: 5px;
+	}
+
+	.slick-next
+	{
+		right: 5px;
+	}
+
+	.slick-dots li button:before
+	{
+		font-size: 30px;
+	}
+
+	.slick-dots
+	{
+		li
+		{
+			button:before
+			{
+				font-size: 35px;
+				color: $keeto-purple-lighter;
+				opacity: 1;
+			}
+
+			&.slick-active
+			{
+				button:before
+				{
+					color: $keeto-purple-dark;
 				}
 			}
 		}
