@@ -1,0 +1,183 @@
+@import "slick-theme.scss";
+@import "slick.scss";
+@import "bootstrap";
+@import "keeto";
+
+body
+{
+	font-family: 'Exo 2', sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	background-color: white;
+	color: $keeto-black;
+}
+
+a
+{
+	&:link,
+	&:hover,
+	&:visited,
+	&:active
+	{
+		color: $keeto-purple;
+	}
+}
+
+.heading
+{
+	font-family: 'Bitter', serif;
+	font-weight: 700;
+}
+
+.navbar-header
+{
+	.navbar-toggle
+	{
+		background-color: transparent;
+		border: none;
+
+		&:hover,
+		&:focus
+		{
+			background-color: transparent;
+			border: none;
+		}
+
+		.icon-bar
+		{
+			background-color: $keeto-yellow;
+		}
+	}
+}
+
+.navbar
+{
+	background-color: $keeto-purple;
+	border: none;
+
+	@include desktop()
+	{
+		height: 75px;
+	}
+	@include tablet()
+	{
+		height: 75px;
+	}
+
+	&.showBorder
+	{
+		border-bottom: 2px solid $keeto-yellow;
+	}
+
+	.navbar-collapse
+	{
+		max-height: 355px;
+
+		&.in,
+		&.collapsing
+		{
+			border-top: none;
+			box-shadow: none;
+		}
+
+		.navbar-nav
+		{
+			background-color: $keeto-purple;
+
+			@include desktop()
+			{
+				.logo
+				{
+					position: relative;
+					> a
+					{
+						width: 140px;
+
+						img
+						{
+							position: absolute;
+							height: 100px;
+							top: -10px;
+						}
+					}
+				}
+			}
+
+			@include tablet()
+			{
+				.logo
+				{
+					position: relative;
+					> a
+					{
+						width: 140px;
+
+						img
+						{
+							position: absolute;
+							height: 100px;
+							top: -10px;
+						}
+					}
+				}
+			}
+
+			.logo
+			{
+				img
+				{
+					height: 100px;
+				}
+			}
+
+			li
+			{
+				text-align: center;
+
+				@include desktop()
+				{
+					text-align: left;
+				}
+				@include tablet()
+				{
+					text-align: left;
+				}
+
+				a
+				{
+					color: $keeto-white;
+					margin-top: 12.5px;
+					padding-top: 5px;
+					padding-bottom: 5px;
+
+					@include desktop()
+					{
+						padding-top: 15px;
+						padding-bottom: 15px;
+					}
+
+					@include tablet()
+					{
+						padding-top: 15px;
+						padding-bottom: 15px;
+					}
+
+				}
+			}
+
+			.active
+			{
+				a
+				{
+					&:hover,
+					&:focus
+					{
+						background-color: transparent;
+					}
+					border-bottom: 2px solid $keeto-yellow;
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}
