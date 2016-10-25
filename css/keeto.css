@@ -37,7 +37,7 @@ a:active {
 
 /* navbar */
 .navbar {
-    height: 6.0vw;
+    height: 6.0vw !important;
     background-color: #7884C0;
     border-style: none;
     margin: 0;
