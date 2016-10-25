@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:700|Exo+2">
 		<link rel="stylesheet" href="css/frontend.css">
 	</head>
-	<body id="#scroll_top" data-spy="scroll" data-target="#navbar" data-offset="140">
+	<body id="scroll_top" data-spy="scroll" data-target="#navbar" data-offset="140">
 		<nav class="navbar navbar-inverse navbar-fixed-top showBorder">
 			<div class="container">
 				<div class="row">
@@ -39,12 +39,62 @@
 			</div>
 		</nav>
 
-		<div class="container-fluid main-content">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="header-slider">
 					<div class="slide slide-first"></div>
 					<div class="slide slide-second"></div>
 					<div class="slide slide-third"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="scroll_about" class="container keeto-section">
+			<div class="row top-buffer">
+				<div class="col-xs-12">
+					<h2 class="text-center heading">Keeto?!</h2>
+				</div>
+			</div>
+			<div class="row top-buffer">
+				<div class="col-xs-12 col-md-6 text-justify">
+					<p><strong><em>Keeto</em> is a module for OpenSSH that enables profile-based administration of access permissions in a central LDAP aware Directory Service, adds support for X.509 certificates and handles the distribution of OpenSSH key material in an automated and secure manner.</strong></p>
+					<p>The fundamental idea behind is to leverage existing infrastructure usually found in larger enterprises for managing access to OpenSSH servers comprising the assignment and revocation of access permissions and the management of keys. In order to gain full advantage of <em>Keeto</em> a PKI and a Directory Service have to be present. Optionally a strong protection mechanism for private keys such as a Smartcard can be used to increase the level of security.</p>
+					Having all access permissions in a central repository highly simplifies its management with regards to the assignment/revocation and overview of permissions. <em>Keeto</em> represents access permissions through different access profile types that are assigned to OpenSSH servers centrally in an LDAP aware Directory Service such as OpenLDAP or Active Directory. Two different access profile types are supported enabling either direct access or access on behalf of another account.</p>
+					<p>Proper key management is vital to maintain the security of services. This comprises the secure generation of key material with approved tools and security parameters, the secure distribution and installation of keys and an appropriate key lifecycle management including the revocation, regeneration and removal of keys.</p>
+					<p>OpenSSH uses its own key format that solely consists of the data needed for the cryptographic operation during authentication. In comparison to X.509 certificates there is no binding to an identity, no integrity protection, no expiration and no mechanism for revocation.</p>
+				</div>
+				<div class="col-xs-12 col-md-6 text-justify">
+					<p>This properties can lead either to manual processes or insecure handling of the key material. In a worst case scenario OpenSSH keys are</p>
+					<ul>
+						<li>generated with unknown and unapproved tools using unsecure algorithms</li>
+						<li>distributed via non-integrity protected channels such as email or ticketing systems</li>
+						<li>not verified over an out of band channel before installation</li>
+						<li>deployed in an unsecure manner creating hard to detect backdoors</li>
+						<li>not regenerated in certain intervals</li>
+						<li>not in sync with actual access permissions</li>
+						<li>not revocable in a well-defined way</li>
+					</ul>
+					<p>Those issues can be mitigated with a product solely focussing on the management of OpenSSH keys. However if a PKI is present this will result in two extensive software layers and processes that need to be maintained for the management of key material.</p>
+					<p>Instead of managing OpenSSH keys himself <em>Keeto</em> introduces support for X.509 certificates to OpenSSH. As X.509 certificates are already managed by a PKI no new processes e.g. key generation, periodical regeneration or revocation have to be established. Furthermore the protocol between the SSH client and the OpenSSH server remains untouched. Every SSH aware client can be used transparently without any modification. The distribution and proper installation of OpenSSH keys is handled by <em>Keeto</em> on each connection attempt after access permissions and the X.509 certificate(s) have been successfully verified.</p>
+					<p><em>Keeto</em> hooks into the standard PAM interface making it relatively independent from changes to OpenSSH itself. This implies that no modification of the OpenSSH source code is needed in order to run <em>Keeto</em>.</p>
+				</div>
+			</div>
+			<div class="row top-buffer">
+				<div class="col-xs-12">
+					<img src="img/keeto-high-level-flow.png" class="img-responsive shrink-image" />
+				</div>
+			</div>
+		</div>
+
+		<div id="scroll_examples" class="container keeto-section">
+			<div class="row top-buffer">
+				<div class="col-xs-12">
+					<h2 class="text-center heading">Profile Usage</h2>
+				</div>
+			</div>
+			<div class="row top-buffer">
+				<div class="col-xs-12 text-justify">
+					Once <em>Keeto</em> is setup access to OpenSSH servers is exclusively managed in an LDAP aware Directory Service. Access permissions are granted through access profiles which come in two flavors. A direct access profile grants access directly to the users account whereas an access on behalf profile grants access to a different account. The latter one is meaningful e.g. to allow specific users to access technical accounts. Optionally keystore options can be assigned to an access profile restricting the usage of the key to certain commands or IP addresses.
 				</div>
 			</div>
 		</div>
