@@ -212,6 +212,12 @@ a:active {
     margin-bottom: 0;
 }
 
+.donate-btn {
+    display: inline !important;
+    border: none;
+    font-size: 14px;
+}
+
 /* footer */
 .footer {
     position: absolute;
@@ -334,11 +340,4 @@ a:active {
     .slider-smartphone {
         display: block;
     }
-}
-
-.donate-btn
-{
-    display: inline !important;
-    border: none;
-    font-size: 14px;
 }
