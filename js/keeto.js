@@ -34,7 +34,7 @@ $(document).ready(function() {
         slideMove: 1,
         controls: true,
         easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-        speed: 600
+        speed: 1200
     });
 
     $('#examples-slider-aobp').lightSlider({
@@ -44,21 +44,19 @@ $(document).ready(function() {
         slideMove: 1,
         controls: true,
         easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-        speed: 600
+        speed: 1200
     });
 });
 
 $(document).on('scroll', function() {
-       if ($('.navbar .navbar-nav .active').length == 0 &&
-!$('#navbar').hasClass('showBorder')) {
-           $('#navbar').addClass('showBorder');
-       }
-    });
+    if ($('.navbar .navbar-nav .active').length == 0 &&
+        !$('#navbar').hasClass('showBorder')) {
+            $('#navbar').addClass('showBorder');
+    }
+});
 
-    //Fired whenever a new menu item becomes active
-    //See https://getbootstrap.com/javascript/#scrollspy-events
-    $('[data-spy="scroll"]').on('activate.bs.scrollspy', function (e) {
-        if ($('#navbar').hasClass('showBorder')) {
-            $('#navbar').removeClass('showBorder');
-        }
-    });
+$('[data-spy="scroll"]').on('activate.bs.scrollspy', function (e) {
+    if ($('#navbar').hasClass('showBorder')) {
+        $('#navbar').removeClass('showBorder');
+    }
+});
