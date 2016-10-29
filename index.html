@@ -28,7 +28,7 @@
                     </button>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse showBorder">
-                    <a href="#scroll_top" class="navbar-left"><img src="img/logo.png" class="img-responsive"></a>
+                    <a href="#scroll_top" class="navbar-left"><img src="webroot/static/img/logo.png" class="img-responsive"></a>
                     <ul class="nav navbar-nav">
                         <li class="heading text-uppercase"><a href="#scroll_about">About</a></li>
                         <li class="heading text-uppercase"><a href="#scroll_examples">Examples</a></li>
@@ -40,23 +40,23 @@
         </nav>
         <ul id="header-slider">
             <li>
-                <img src="img/slider-1-desktop.png" class="img-responsive slider-desktop">
-                <img src="img/slider-1-tablet.png" class="img-responsive slider-tablet">
-                <img src="img/slider-1-smartphone.png" class="img-responsive slider-smartphone">
+                <img src="webroot/static/img/slider-1-desktop.png" class="img-responsive slider-desktop">
+                <img src="webroot/static/img/slider-1-tablet.png" class="img-responsive slider-tablet">
+                <img src="webroot/static/img/slider-1-smartphone.png" class="img-responsive slider-smartphone">
                 <span class="heading text-uppercase" id="caption">Use X.509 certificates for OpenSSH and leverage PKI<br>
                 processes for managing the key material.</span>
             </li>
             <li>
-                <img src="img/slider-2-desktop.png" class="img-responsive slider-desktop">
-                <img src="img/slider-2-tablet.png" class="img-responsive slider-tablet">
-                <img src="img/slider-2-smartphone.png" class="img-responsive slider-smartphone">
+                <img src="webroot/static/img/slider-2-desktop.png" class="img-responsive slider-desktop">
+                <img src="webroot/static/img/slider-2-tablet.png" class="img-responsive slider-tablet">
+                <img src="webroot/static/img/slider-2-smartphone.png" class="img-responsive slider-smartphone">
                 <span class="heading text-uppercase" id="caption">Centrally manage access to OpenSSH Servers<br>
                 in an LDAP aware Directory Service.</span>
             </li>
             <li>
-                <img src="img/slider-3-desktop.png" class="img-responsive slider-desktop">
-                <img src="img/slider-3-tablet.png" class="img-responsive slider-tablet">
-                <img src="img/slider-3-smartphone.png" class="img-responsive slider-smartphone">
+                <img src="webroot/static/img/slider-3-desktop.png" class="img-responsive slider-desktop">
+                <img src="webroot/static/img/slider-3-tablet.png" class="img-responsive slider-tablet">
+                <img src="webroot/static/img/slider-3-smartphone.png" class="img-responsive slider-smartphone">
                 <span class="heading text-uppercase" id="caption">Automatize the distribution and installation<br>
                 of OpenSSH key material.</span>
             </li>
@@ -96,7 +96,7 @@
             </div>
             <div class="row top-buffer">
                 <div class="col-xs-12">
-                    <img class="img-responsive" src="img/keeto-high-level-flow.png" alt="Keeto high-level workflow">
+                    <img class="img-responsive" src="webroot/static/img/keeto-high-level-flow.png" alt="Keeto high-level workflow">
                 </div>
             </div>
         </div>
@@ -116,31 +116,31 @@
                 <div class="col-xs-12">
                     <ul id="examples-slider-dap" class="content-slider">
                         <li>
-                            <img src="img/examples-dap-1.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-dap-1.png" class="img-responsive">
                             <p class="text-center top-buffer">All users that should have access to an OpenSSH server need an entity with a uid and certificate set.<br>
                             This is supposed to be already part of the DIT and managed by another application.</p>
                         </li>
                         <li>
-                            <img src="img/examples-dap-2.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-dap-2.png" class="img-responsive">
                             <p class="text-center top-buffer">For a direct access profile a group of key providers has to be specified.<br>
                             All users in this group can access the associated OpenSSH server(s) directly.
                         </li>
                         <li>
-                            <img src="img/examples-dap-3.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-dap-3.png" class="img-responsive">
                             <p class="text-center top-buffer">A direct access profile is created and the group of key providers linked to it.<br>
                             Optionally keystore options can be added (see next example).</p>
                         </li>
                         <li>
-                            <img src="img/examples-dap-4.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-dap-4.png" class="img-responsive">
                             <p class="text-center top-buffer">Finally an OpenSSH server entry is created and the direct access profile linked.<br>
                             Note that an OpenSSH server entry can have an arbitrary amount of profiles associated.</p>
                         </li>
                         <li>
-                            <img src="img/examples-dap-5.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-dap-5.png" class="img-responsive">
                             <p class="text-center top-buffer">The user is now able to login. The keystore is installed in a way preventing it from non-privileged modifications.</p>
                         </li>
                         <li>
-                            <img src="img/examples-dap-6.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-dap-6.png" class="img-responsive">
                             <p class="text-center top-buffer">Every protocol that relies on SSH for authentication can be used. Here SFTP is used for file transfer.</p>
                         </li>
                     </ul>
@@ -150,43 +150,43 @@
                 <div class="col-xs-12">
                     <ul id="examples-slider-aobp" class="content-slider">
                         <li>
-                            <img src="img/examples-aobp-1.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-aobp-1.png" class="img-responsive">
                             <p class="text-center top-buffer">In this example another user 'keeto-test-user' is provided access to an OpenSSH server.</p>
                         </li>
                         <li>
-                            <img src="img/examples-aobp-2.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-aobp-2.png" class="img-responsive">
                             <p class="text-center top-buffer">As an access on behalf profile is used technical accounts need to be present that can be used on behalf. Those accounts only need to have a uid.</p>
                         </li>
                         <li>
-                            <img src="img/examples-aobp-3.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-aobp-3.png" class="img-responsive">
                             <p class="text-center top-buffer">Another technical account someone can use on his behalf.</p>
                         </li>
                         <li>
-                            <img src="img/examples-aobp-4.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-aobp-4.png" class="img-responsive">
                             <p class="text-center top-buffer">Keystore options can be used to restrict access to certain commands or locations.</p>
                         </li>
                         <li>
-                            <img src="img/examples-aobp-5.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-aobp-5.png" class="img-responsive">
                             <p class="text-center top-buffer">A group with technical accounts is created. In terms of <em>keeto</em> this is called a target keystore.</p>
                         </li>
                         <li>
-                            <img src="img/examples-aobp-6.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-aobp-6.png" class="img-responsive">
                             <p class="text-center top-buffer">A group of users is created that can access the technical accounts in the target keystore group on behalf.</p>
                         </li>
                         <li>
-                            <img src="img/examples-aobp-7.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-aobp-7.png" class="img-responsive">
                             <p class="text-center top-buffer">An access on behalf profile is created and the key provider group, the target keystore group and the keystore options are linked.</p>
                         </li>
                         <li>
-                            <img src="img/examples-aobp-8.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-aobp-8.png" class="img-responsive">
                             <p class="text-center top-buffer">Finally the new access on behalf profile is linked to the OpenSSH server entry.</p>
                         </li>
                         <li>
-                            <img src="img/examples-aobp-9.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-aobp-9.png" class="img-responsive">
                             <p class="text-center top-buffer">'keeto-test-user' is now able to login on behalf of the technical account 'db2admin'.</p>
                         </li>
                         <li>
-                            <img src="img/examples-aobp-10.png" class="img-responsive">
+                            <img src="webroot/static/img/examples-aobp-10.png" class="img-responsive">
                             <p class="text-center top-buffer">'sebastian-test-user' is able to login on behalf of the technical account 'postgres'.</p>
                         </li>
                     </ul>

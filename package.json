@@ -5,12 +5,15 @@
   "main": "index.js",
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
-    "slick-carousel": "^1.6.0"
+    "flexslider": "^2.6.3",
+    "jquery": "^1.12.4"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-modernizr": "^1.0.2",
     "grunt-sass": "^1.2.1"

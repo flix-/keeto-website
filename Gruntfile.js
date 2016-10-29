@@ -3,6 +3,8 @@ module.exports = function(grunt)
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-modernizr');
 
@@ -10,68 +12,116 @@ module.exports = function(grunt)
 		{
 			clean: [
 				'.tmp',
-				'css/frontend.css*',
-				'js/vendor.js'
+				'webroot/static/css/*',
+				'webroot/static/js/*',
 			],
 
 			modernizr:
 			{
 				dist:
 				{
-					crawl: false,
-					customTests: [],
-					dest: '.tmp/modernizr.js',
-					tests: [ 'flexbox' ],
-					options: [ 'setClasses' ],
-					uglify: true,
-					classPrefix: 'm-'
+					"parseFiles": true,
+					"crawl": false,
+					"customTests": [],
+					"dest": ".tmp/modernizr.js",
+					"tests": [],
+					"options": [ "setClasses" ],
+					"uglify": true
 				}
 			},
 
 			concat:
 			{
-				vendor:
+				"vendor":
 				{
-					src: [
+					"src":
+					[
 						'.tmp/modernizr.js',
 						'node_modules/jquery/dist/jquery.min.js',
-						'node_modules/slick-carousel/slick/slick.min.js',
-						'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js'
+						'node_modules/flexslider/jquery.flexslider-min.js',
+						'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js',
 					],
-					dest: 'js/vendor.js',
-					nonull: true
+					"dest": 'webroot/static/js/vendor.js',
+					"nonull": true
+				},
+				"keeto":
+				{
+					"src":
+					[
+						'js/frontend.js',
+					],
+					"dest": 'webroot/static/js/keeto.js',
+					"nonull": true
+				}
+			},
+
+			uglify:
+			{
+				"options":
+				{
+					compress: true,
+					mangle: true,
+					sourceMap: false,
+				},
+				"keeto":
+				{
+					"files":
+					{
+						'webroot/static/js/keeto.min.js': ['webroot/static/js/keeto.js'],
+						'webroot/static/js/vendor.min.js': ['webroot/static/js/vendor.js']
+					}
 				}
 			},
 
 			sass:
 			{
-				options:
+				"options":
 				{
-					outputStyle: 'compressed',
-					includePaths: ['node_modules/slick-carousel/slick', 'node_modules/bootstrap-sass/assets/stylesheets'],
-					sourceMap: true
+					"outputStyle": 'compressed',
+					"includePaths": ['node_modules/flexslider', 'node_modules/bootstrap-sass/assets/stylesheets'],
+					"sourceMap": true
 				},
 
 				dist:
 				{
-					files:
+					"files":
 					{
-						'css/frontend.css': 'sass/main.scss'
+						'webroot/static/css/frontend.css': 'sass/main.scss'
 					}
+				}
+			},
+
+			copy:
+			{
+				"keeto":
+				{
+					"files":
+					[
+						{
+							"expand": true,
+							"cwd": 'node_modules/flexslider/fonts/',
+							"src": ['**'],
+							"dest": 'webroot/static/css/fonts/',
+						}
+					]
+
 				}
 			},
 
 			watch:
 			{
-				sass:
+				"sass":
 				{
-					files: 'sass/**/*.scss',
-					tasks: ['sass']
+					"files": 'sass/**/*.scss',
+					"tasks": ['sass']
+				},
+				"js":
+				{
+					"files": 'js/*.js',
+					"tasks": ['concat', 'uglify']
 				}
-			}
+			},
 		});
 
-	grunt.registerTask('bootstrap', ['modernizr', 'concat']);
-	grunt.registerTask('build', ['clean', 'bootstrap', 'sass']);
-	grunt.registerTask('default', ['build']);
+	grunt.registerTask('default', ['clean', 'modernizr', 'concat', 'uglify', 'copy', 'sass']);
 };
