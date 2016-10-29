@@ -1,0 +1,44 @@
+@import "keeto";
+
+.nav-tabs
+{
+	> li.active
+	{
+		font-family: 'Bitter', serif;
+		font-weight: 700;
+	}
+}
+
+.label-info
+{
+	background-color: $keeto-purple-dark;
+	font-family: 'Bitter', serif;
+	font-weight: 700;
+}
+
+.label-link
+{
+	background-color: $keeto-purple;
+	font-family: 'Bitter', serif;
+	font-weight: 700;
+}
+
+.no-link-decoration:hover,
+.no-link-decoration:visited,
+.no-link-decoration:link,
+.no-link-decoration:active
+{
+	text-decoration: none;
+}
+
+.tab-pane .table
+{
+	margin-bottom: 0;
+}
+
+.donate-btn
+{
+	display: inline !important;
+	border: none;
+	font-size: 14px;
+}

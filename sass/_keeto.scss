@@ -6,18 +6,8 @@ $keeto-yellow: #EDDD9A;
 $keeto-white: #fff;
 $keeto-black: #3F3636;
 
-$mobile-content-width: 320px;
-$desktop-content-width: 920px;
-
-@mixin mobile
-{
-	/* Extra small devices (phones, less than 768px) */
-	/* No media query since this is the default in Bootstrap */
-	@media (max-width: #{$screen-sm-min - 1px})
-	{
-		@content;
-	}
-}
+$keeto-header-height-desktop: 150px;
+$keeto-header-height-tablet: $keeto-header-height-desktop;
 
 @mixin tablet
 {

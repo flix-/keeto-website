@@ -38,7 +38,7 @@ module.exports = function(grunt)
 					[
 						'.tmp/modernizr.js',
 						'node_modules/jquery/dist/jquery.min.js',
-						'node_modules/flexslider/jquery.flexslider-min.js',
+						'node_modules/lightslider/src/js/lightslider.js',
 						'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js',
 					],
 					"dest": 'webroot/static/js/vendor.js',
@@ -78,7 +78,7 @@ module.exports = function(grunt)
 				"options":
 				{
 					"outputStyle": 'compressed',
-					"includePaths": ['node_modules/flexslider', 'node_modules/bootstrap-sass/assets/stylesheets'],
+					"includePaths": ['node_modules/lightslider/src/css', 'node_modules/bootstrap-sass/assets/stylesheets'],
 					"sourceMap": true
 				},
 
@@ -91,22 +91,21 @@ module.exports = function(grunt)
 				}
 			},
 
-			copy:
-			{
-				"keeto":
-				{
-					"files":
-					[
-						{
-							"expand": true,
-							"cwd": 'node_modules/flexslider/fonts/',
-							"src": ['**'],
-							"dest": 'webroot/static/css/fonts/',
-						}
-					]
-
-				}
-			},
+			//copy:
+			//{
+			//	"keeto":
+			//	{
+			//		"files":
+			//		[
+			//			{
+			//				"expand": true,
+			//				"cwd": 'node_modules/flexslider/fonts/',
+			//				"src": ['**'],
+			//				"dest": 'webroot/static/css/fonts/',
+			//			}
+			//		]
+			//	}
+			//},
 
 			watch:
 			{
@@ -123,5 +122,5 @@ module.exports = function(grunt)
 			},
 		});
 
-	grunt.registerTask('default', ['clean', 'modernizr', 'concat', 'uglify', 'copy', 'sass']);
+	grunt.registerTask('default', ['clean', 'modernizr', 'concat', 'uglify', 'sass']);
 };

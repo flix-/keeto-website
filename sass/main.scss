@@ -1,6 +1,10 @@
-@import "flexslider";
+@import "lightslider";
 @import "bootstrap";
 @import "keeto";
+
+@import "navbar.scss";
+@import "slider.scss";
+@import "download_section.scss";
 
 body
 {
@@ -14,12 +18,12 @@ body
 
 	@include tablet()
 	{
-		margin-top: 75px;
+		margin-top: $keeto-header-height-tablet;
 	}
 
 	@include desktop()
 	{
-		margin-top: 75px;
+		margin-top: $keeto-header-height-desktop;
 	}
 }
 
@@ -40,159 +44,6 @@ a
 	font-weight: 700;
 }
 
-.navbar-header
-{
-	.navbar-toggle
-	{
-		background-color: transparent;
-		border: none;
-
-		&:hover,
-		&:focus
-		{
-			background-color: transparent;
-			border: none;
-		}
-
-		.icon-bar
-		{
-			background-color: $keeto-yellow;
-		}
-	}
-}
-
-.navbar
-{
-	background-color: $keeto-purple;
-	border: none;
-
-	@include desktop()
-	{
-		height: 75px;
-	}
-	@include tablet()
-	{
-		height: 75px;
-	}
-
-	&.showBorder
-	{
-		border-bottom: 2px solid $keeto-yellow;
-	}
-
-	.navbar-collapse
-	{
-		max-height: 355px;
-
-		&.in,
-		&.collapsing
-		{
-			border-top: none;
-			box-shadow: none;
-		}
-
-		.navbar-nav
-		{
-			background-color: $keeto-purple;
-
-			.logo
-			{
-				img
-				{
-					height: 75px;
-				}
-			}
-
-			@include desktop()
-			{
-				.logo
-				{
-					position: relative;
-					> a
-					{
-						width: 140px;
-
-						img
-						{
-							position: absolute;
-							height: 100px;
-							top: -10px;
-						}
-					}
-				}
-			}
-
-			@include tablet()
-			{
-				.logo
-				{
-					position: relative;
-					> a
-					{
-						width: 140px;
-
-						img
-						{
-							position: absolute;
-							height: 100px;
-							top: -10px;
-						}
-					}
-				}
-			}
-
-			li
-			{
-				text-align: center;
-
-				@include desktop()
-				{
-					text-align: left;
-				}
-				@include tablet()
-				{
-					text-align: left;
-				}
-
-				a
-				{
-					color: $keeto-white;
-					margin-top: 12.5px;
-					padding-top: 5px;
-					padding-bottom: 5px;
-
-					@include desktop()
-					{
-						padding-top: 15px;
-						padding-bottom: 15px;
-					}
-
-					@include tablet()
-					{
-						padding-top: 15px;
-						padding-bottom: 15px;
-					}
-
-				}
-			}
-
-			.active
-			{
-				a
-				{
-					&:hover,
-					&:focus
-					{
-						background-color: transparent;
-					}
-					border-bottom: 2px solid $keeto-yellow;
-					background-color: transparent;
-				}
-			}
-		}
-	}
-}
-
 .main-content
 {
 	@include desktop()
@@ -206,134 +57,6 @@ a
 	}
 
 	margin-top: 50px;
-}
-
-.header-slider
-{
-	border: 0;
-
-	.slide
-	{
-		@include desktop()
-		{
-			height: 600px;
-		}
-
-		@include tablet()
-		{
-			height: 400px;
-		}
-
-		width: 100%;
-		height: 150px;
-		background-size: cover;
-	}
-	.slide-first
-	{
-		@include desktop()
-		{
-			background: url('/static/img/slider-1-desktop.png') left center no-repeat;
-		}
-
-		@include tablet()
-		{
-			background: url('/static/img/slider-1-tablet.png') left center no-repeat;
-		}
-
-		background: url('/static/img/slider-1-smartphone.png') left center no-repeat;
-	}
-
-	.slide-second
-	{
-		@include desktop()
-		{
-			background: url('/static/img/slider-2-desktop.png') left center no-repeat;
-		}
-
-		@include tablet()
-		{
-			background: url('/static/img/slider-2-tablet.png') left center no-repeat;
-		}
-
-		background: url('/static/img/slider-2-smartphone.png') left center no-repeat;
-	}
-
-	.slide-third
-	{
-		@include desktop()
-		{
-			background: url('/static/img/slider-3-desktop.png') left center no-repeat;
-		}
-
-		@include tablet()
-		{
-			background: url('/static/img/slider-3-tablet.png') left center no-repeat;
-		}
-
-		background: url('/static/img/slider-3-smartphone.png') left center no-repeat;
-	}
-
-	.flex-direction-nav
-	{
-
-		.flex-prev,
-		.flex-next
-		{
-			width: 32px;
-			height: 32px;
-			opacity: 0.75;
-
-			&::before
-			{
-				font-family: none;
-				content: '';
-				text-shadow: none;
-				background-size: 64px 64px;
-				width: 32px;
-				height: 32px;
-				background-image: url('/static/img/controls.png');
-				background-repeat: no-repeat;
-			}
-		}
-
-		.flex-prev
-		{
-			left: 10px;
-
-			&::before
-			{
-				background-position: 0 0;
-			}
-		}
-
-		.flex-next
-		{
-			right: 10px;
-
-			&::before
-			{
-				background-position: -32px 0;
-			}
-		}
-	}
-
-	.flex-control-paging
-	{
-		li
-		{
-			a
-			{
-				width: 10px;
-				height: 10px;
-				background: $keeto-purple-lighter;
-
-				&.flex-active
-				{
-					background: $keeto-purple-dark;
-				}
-			}
-		}
-	}
 }
 
 .top-buffer
@@ -352,4 +75,23 @@ a
 {
 	padding-bottom: 50px;
 	border-bottom: 1px dotted $keeto-black;
+
+	&:last-of-type
+	{
+		border-bottom: none;
+	}
+}
+
+.footer
+{
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 75px;
+	background-color: $keeto-purple;
+
+	p
+	{
+		margin-top: 25px;
+		color: white;
+	}
 }

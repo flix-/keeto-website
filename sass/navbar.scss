@@ -1,0 +1,172 @@
+@import "keeto";
+
+.navbar-header
+{
+	.navbar-toggle
+	{
+		background-color: transparent;
+		border: none;
+
+		&:hover,
+		&:focus
+		{
+			background-color: transparent;
+			border: none;
+		}
+
+		.icon-bar
+		{
+			background-color: $keeto-yellow;
+		}
+	}
+}
+
+.navbar
+{
+	background-color: $keeto-purple;
+	border: none;
+
+	@include desktop()
+	{
+		height: $keeto-header-height-desktop;
+	}
+	@include tablet()
+	{
+		height: $keeto-header-height-tablet;
+	}
+
+	&.showBorder
+	{
+		border-bottom: 2px solid $keeto-yellow;
+	}
+
+	.navbar-collapse
+	{
+		max-height: 355px;
+
+		&.in,
+		&.collapsing
+		{
+			border-top: none;
+			box-shadow: none;
+		}
+
+		.navbar-nav
+		{
+			background-color: $keeto-purple;
+
+			.logo
+			{
+				img
+				{
+					height: 75px;
+				}
+			}
+
+			@include desktop()
+			{
+				.logo
+				{
+					&.active
+					{
+						a
+						{
+							border-bottom: none;
+						}
+					}
+
+					position: relative;
+					> a
+					{
+						width: 205px;
+
+						img
+						{
+							position: absolute;
+							height: 155px;
+							top: -50px;
+						}
+					}
+				}
+			}
+
+			@include tablet()
+			{
+				.logo
+				{
+
+					&.active
+					{
+						a
+						{
+							border-bottom: none;
+						}
+					}
+
+					position: relative;
+					> a
+					{
+						width: 205px;
+
+						img
+						{
+							position: absolute;
+							height: 100px;
+							top: -50px;
+						}
+					}
+				}
+			}
+
+			li
+			{
+				text-align: center;
+
+				@include desktop()
+				{
+					text-align: left;
+				}
+				@include tablet()
+				{
+					text-align: left;
+				}
+
+				a
+				{
+					color: $keeto-white;
+					/*margin-top: 12.5px;*/
+					margin-top: 50px;
+					padding-top: 5px;
+					padding-bottom: 5px;
+
+					@include desktop()
+					{
+						padding-top: 15px;
+						padding-bottom: 15px;
+					}
+
+					@include tablet()
+					{
+						padding-top: 15px;
+						padding-bottom: 15px;
+					}
+
+				}
+			}
+
+			.active
+			{
+				a
+				{
+					&:hover,
+					&:focus
+					{
+						background-color: transparent;
+					}
+					border-bottom: 2px solid $keeto-yellow;
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}
