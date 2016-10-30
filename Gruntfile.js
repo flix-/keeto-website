@@ -5,6 +5,7 @@ module.exports = function(grunt)
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-cache-breaker');
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-modernizr');
 
@@ -107,6 +108,21 @@ module.exports = function(grunt)
 				}
 			},
 
+			cachebreaker:
+			{
+				"keeto":
+				{
+					"options":
+					{
+						"match": ['frontend.css', 'vendor.*.js', 'keeto.*.js'],
+					},
+					"files":
+					{
+						"src": ['webroot/index.html']
+					}
+				}
+			},
+
 			watch:
 			{
 				"sass":
@@ -122,5 +138,5 @@ module.exports = function(grunt)
 			},
 		});
 
-	grunt.registerTask('default', ['clean', 'modernizr', 'concat', 'uglify', 'copy', 'sass']);
+	grunt.registerTask('default', ['clean', 'modernizr', 'concat', 'uglify', 'copy', 'sass', 'cachebreaker']);
 };
