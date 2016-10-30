@@ -31,7 +31,7 @@ $(document).ready(function() {
 		slideMove: 1,
 		controls: true,
 		easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-		speed: 600
+		speed: 1200
 	});
 
 	$('#examples-slider-aobp').lightSlider({
@@ -41,7 +41,7 @@ $(document).ready(function() {
 		slideMove: 1,
 		controls: true,
 		easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-		speed: 600
+		speed: 1200
 	});
 
 	$(document).on('scroll', function() {

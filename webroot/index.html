@@ -122,7 +122,7 @@
 						<li>
 							<img src="/static/img/examples-dap-1.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								All users that should have access to an OpenSSH server need an entity with a uid and certificate set. This is supposed to be already part of the DIT and managed by another application.
+								All users that should have access to an OpenSSH server need an entity with a uid and certificate set. This is supposed to be already part of the DIT and managed by the PKI.
 							</p>
 						</li>
 						<li>
@@ -152,7 +152,7 @@
 						<li>
 							<img src="/static/img/examples-dap-6.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								Every protocol that relies on SSH for authentication can be used. Here SFTP is used for file transfer.
+								Every protocol that relies on SSH for authentication can be used. Here SFTP is used for secure file transfer.
 							</p>
 						</li>
 					</ul>
@@ -164,19 +164,19 @@
 						<li>
 							<img src="/static/img/examples-aobp-1.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								In this example another user 'keeto-test-user' is provided access to an OpenSSH server.
+								In this example another user 'keeto' is provided access to an OpenSSH server.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-aobp-2.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								As an access on behalf profile is used technical accounts need to be present that can be used on behalf. Those accounts only need to have a uid.
+								As an access on behalf profile is used technical accounts need to be present a user can use on behalf. Those accounts only need to have a uid.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-aobp-3.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								Another technical account someone can use on his behalf.
+								Another technical account a user can use on behalf.
 							</p>
 						</li>
 						<li>
@@ -188,7 +188,7 @@
 						<li>
 							<img src="/static/img/examples-aobp-5.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								A group with technical accounts is created. In terms of <em>keeto</em> this is called a target keystore.
+								A group with technical accounts is created. In terms of <em>Keeto</em> this is called a target keystore.
 							</p>
 						</li>
 						<li>
@@ -212,13 +212,13 @@
 						<li>
 							<img src="/static/img/examples-aobp-9.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								'keeto-test-user' is now able to login on behalf of the technical account 'db2admin'.
+								The user 'keeto' is now able to login on behalf of the technical account 'db2admin'.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-aobp-10.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								'sebastian-test-user' is able to login on behalf of the technical account 'postgres'.
+								'sebastian' is able to login on behalf of the technical account 'postgres'.
 							</p>
 						</li>
 					</ul>
