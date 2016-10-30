@@ -111,7 +111,7 @@
 						img
 						{
 							position: absolute;
-							height: 100px;
+							height: 155px;
 							top: -50px;
 						}
 					}
@@ -134,8 +134,7 @@
 				a
 				{
 					color: $keeto-white;
-					/*margin-top: 12.5px;*/
-					margin-top: 50px;
+					margin-top: 12.5px;
 					padding-top: 5px;
 					padding-bottom: 5px;
 
@@ -143,14 +142,16 @@
 					{
 						padding-top: 15px;
 						padding-bottom: 15px;
+						font-size: 20px;
+						margin-top: (($keeto-header-height-desktop - 50px)/2);
 					}
 
 					@include tablet()
 					{
 						padding-top: 15px;
 						padding-bottom: 15px;
+						margin-top: (($keeto-header-height-tablet - 50px)/2);
 					}
-
 				}
 			}
 
