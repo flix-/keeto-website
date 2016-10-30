@@ -79,7 +79,7 @@ module.exports = function(grunt)
 				"options":
 				{
 					"outputStyle": 'compressed',
-					"includePaths": ['node_modules/lightslider/src/css', 'node_modules/bootstrap-sass/assets/stylesheets'],
+					"includePaths": ['node_modules/lightslider/src/css', 'node_modules/font-awesome/css', 'node_modules/bootstrap-sass/assets/stylesheets'],
 					"sourceMap": true
 				},
 
@@ -103,6 +103,12 @@ module.exports = function(grunt)
 							"cwd": 'node_modules/bootstrap-sass/assets/fonts/',
 							"src": ['**'],
 							"dest": 'webroot/static/fonts/',
+						},
+						{
+							"expand": true,
+							"cwd": 'node_modules/font-awesome/fonts/',
+							"src": ['**'],
+							"dest": 'webroot/static/fonts',
 						}
 					]
 				}
