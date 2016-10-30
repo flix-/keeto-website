@@ -91,21 +91,21 @@ module.exports = function(grunt)
 				}
 			},
 
-			//copy:
-			//{
-			//	"keeto":
-			//	{
-			//		"files":
-			//		[
-			//			{
-			//				"expand": true,
-			//				"cwd": 'node_modules/flexslider/fonts/',
-			//				"src": ['**'],
-			//				"dest": 'webroot/static/css/fonts/',
-			//			}
-			//		]
-			//	}
-			//},
+			copy:
+			{
+				"keeto":
+				{
+					"files":
+					[
+						{
+							"expand": true,
+							"cwd": 'node_modules/bootstrap-sass/assets/fonts/',
+							"src": ['**'],
+							"dest": 'webroot/static/fonts/',
+						}
+					]
+				}
+			},
 
 			watch:
 			{
@@ -122,5 +122,5 @@ module.exports = function(grunt)
 			},
 		});
 
-	grunt.registerTask('default', ['clean', 'modernizr', 'concat', 'uglify', 'sass']);
+	grunt.registerTask('default', ['clean', 'modernizr', 'concat', 'uglify', 'copy', 'sass']);
 };
