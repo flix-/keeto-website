@@ -37,7 +37,7 @@
 
 	&.showBorder
 	{
-		border-bottom: 2px solid $keeto-yellow;
+		border-bottom: 3px solid $keeto-yellow;
 	}
 
 	.navbar-collapse
@@ -61,20 +61,20 @@
 				{
 					height: 75px;
 				}
+
+				&.active
+				{
+					a
+					{
+						border-bottom: none;
+					}
+				}
 			}
 
 			@include desktop()
 			{
 				.logo
 				{
-					&.active
-					{
-						a
-						{
-							border-bottom: none;
-						}
-					}
-
 					position: relative;
 					> a
 					{
@@ -84,7 +84,7 @@
 						{
 							position: absolute;
 							height: 155px;
-							top: -50px;
+							top: -30px;
 						}
 					}
 				}
@@ -95,14 +95,6 @@
 				.logo
 				{
 
-					&.active
-					{
-						a
-						{
-							border-bottom: none;
-						}
-					}
-
 					position: relative;
 					> a
 					{
@@ -112,7 +104,7 @@
 						{
 							position: absolute;
 							height: 155px;
-							top: -50px;
+							top: -30px;
 						}
 					}
 				}
@@ -164,7 +156,7 @@
 					{
 						background-color: transparent;
 					}
-					border-bottom: 2px solid $keeto-yellow;
+					border-bottom: 3px solid $keeto-yellow;
 					background-color: transparent;
 				}
 			}
