@@ -3,6 +3,7 @@ Official Keeto.io website https://keeto.io
 
 # Pre-Requirements
 * npm (https://docs.npmjs.com/)
+* `npm install` in root dir
 
 # Build Keeto.io website
 To build the Keeto.io website simply execute the following commands in root dir
