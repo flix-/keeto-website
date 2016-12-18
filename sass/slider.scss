@@ -6,8 +6,9 @@
 	{
 		position: relative;
 		width: 100%;
-		height: 150px;
 		background-size: cover;
+		//height: 150px;
+		height: 200px;
 
 		@include desktop()
 		{
@@ -16,7 +17,7 @@
 
 		@include tablet()
 		{
-			height: 400px;
+			height: 450px;
 		}
 
 		.heading
@@ -26,7 +27,6 @@
 
 			@include desktop()
 			{
-
 				font-size: 20px;
 				width: 700px;
 				position: absolute;
@@ -53,15 +53,12 @@
 
 		@include tablet()
 		{
-			background: url('/static/img/slider-1-tablet.png') left center no-repeat;
-
-			.heading
-			{
-				right: 10px;
-			}
+			//background: url('/static/img/slider-1-tablet.png') left center no-repeat;
+			background: url('/static/img/testing/991x450.png') left center no-repeat;
 		}
 
-		background: url('/static/img/slider-1-smartphone.png') left center no-repeat;
+		//background: url('/static/img/slider-1-smartphone.png') left center no-repeat;
+		background: url('/static/img/testing/767x250.png') left center no-repeat;
 	}
 
 	.slide-second
@@ -73,15 +70,12 @@
 
 		@include tablet()
 		{
-			background: url('/static/img/slider-2-tablet.png') left center no-repeat;
-
-			.heading
-			{
-				right: 20px;
-			}
+			//background: url('/static/img/slider-2-tablet.png') left center no-repeat;
+			background: url('/static/img/testing/991x450.png') left center no-repeat;
 		}
 
-		background: url('/static/img/slider-2-smartphone.png') left center no-repeat;
+		//background: url('/static/img/slider-2-smartphone.png') left center no-repeat;
+		background: url('/static/img/testing/767x250.png') left center no-repeat;
 	}
 
 	.slide-third
@@ -93,10 +87,12 @@
 
 		@include tablet()
 		{
-			background: url('/static/img/slider-3-tablet.png') left center no-repeat;
+			//background: url('/static/img/slider-3-tablet.png') left center no-repeat;
+			background: url('/static/img/testing/991x450.png') left center no-repeat;
 		}
 
-		background: url('/static/img/slider-3-smartphone.png') left center no-repeat;
+		//background: url('/static/img/slider-3-smartphone.png') left center no-repeat;
+		background: url('/static/img/testing/767x250.png') left center no-repeat;
 	}
 }
 
