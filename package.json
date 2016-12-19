@@ -27,10 +27,18 @@
     "type": "git",
     "url": "git+https://github.com/flix-/keeto-website.git"
   },
-  "author": "Sebastian Roland",
-  "license": "ISC",
+  "author": {
+    "name": "Sebastian Roland",
+    "email": "seroland86@gmail.com"
+  },
+  "contributors": {
+    "name": "Björn Roland",
+    "email": "info@bjoernr.de"
+  },
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/flix-/keeto-website/issues"
   },
-  "homepage": "https://keeto.io"
+  "homepage": "https://keeto.io",
+  "private": true
 }
