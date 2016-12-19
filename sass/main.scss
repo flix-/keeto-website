@@ -1,0 +1,99 @@
+@import "lightslider";
+@import "bootstrap";
+@import "font-awesome";
+@import "keeto";
+
+@import "navbar.scss";
+@import "slider.scss";
+@import "download_section.scss";
+@import "contact_section.scss";
+
+body
+{
+	font-family: 'Exo 2', sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	background-color: white;
+	color: $keeto-black;
+
+	margin-top: 50px;
+
+	@include tablet()
+	{
+		margin-top: $keeto-header-height-tablet;
+	}
+
+	@include desktop()
+	{
+		margin-top: $keeto-header-height-desktop;
+	}
+}
+
+a
+{
+	&:link,
+	&:hover,
+	&:visited,
+	&:active
+	{
+		color: $keeto-purple;
+	}
+}
+
+.heading
+{
+	font-family: 'Bitter', serif;
+	font-weight: 700;
+}
+
+.main-content
+{
+	@include desktop()
+	{
+		margin-top: 75px;
+	}
+
+	@include tablet()
+	{
+		margin-top: 75px;
+	}
+
+	margin-top: 50px;
+}
+
+.top-buffer
+{
+	margin-top: 25px;
+}
+
+.shrink-image
+{
+	width: 85%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.keeto-section
+{
+	padding-bottom: 50px;
+	border-bottom: 1px dotted $keeto-black;
+
+	&:last-of-type
+	{
+		border-bottom: none;
+	}
+}
+
+.footer
+{
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 75px;
+	background-color: $keeto-purple;
+
+	p
+	{
+		margin-top: 25px;
+		color: white;
+	}
+}

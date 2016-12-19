@@ -1,0 +1,165 @@
+@import "keeto";
+
+.navbar-header
+{
+	.navbar-toggle
+	{
+		background-color: transparent;
+		border: none;
+
+		&:hover,
+		&:focus
+		{
+			background-color: transparent;
+			border: none;
+		}
+
+		.icon-bar
+		{
+			background-color: $keeto-yellow;
+		}
+	}
+}
+
+.navbar
+{
+	background-color: $keeto-purple;
+	border: none;
+
+	@include desktop()
+	{
+		height: $keeto-header-height-desktop;
+	}
+	@include tablet()
+	{
+		height: $keeto-header-height-tablet;
+	}
+
+	&.showBorder
+	{
+		border-bottom: 3px solid $keeto-yellow;
+	}
+
+	.navbar-collapse
+	{
+		max-height: 355px;
+
+		&.in,
+		&.collapsing
+		{
+			border-top: none;
+			box-shadow: none;
+		}
+
+		.navbar-nav
+		{
+			background-color: $keeto-purple;
+
+			.logo
+			{
+				img
+				{
+					height: 75px;
+				}
+
+				&.active
+				{
+					a
+					{
+						border-bottom: none;
+					}
+				}
+			}
+
+			@include desktop()
+			{
+				.logo
+				{
+					position: relative;
+					> a
+					{
+						width: 205px;
+
+						img
+						{
+							position: absolute;
+							height: 155px;
+							top: -30px;
+						}
+					}
+				}
+			}
+
+			@include tablet()
+			{
+				.logo
+				{
+
+					position: relative;
+					> a
+					{
+						width: 205px;
+
+						img
+						{
+							position: absolute;
+							height: 155px;
+							top: -30px;
+						}
+					}
+				}
+			}
+
+			li
+			{
+				text-align: center;
+
+				@include desktop()
+				{
+					text-align: left;
+				}
+				@include tablet()
+				{
+					text-align: left;
+				}
+
+				a
+				{
+					color: $keeto-white;
+					margin-top: 12.5px;
+					padding-top: 5px;
+					padding-bottom: 5px;
+
+					@include desktop()
+					{
+						padding-top: 15px;
+						padding-bottom: 15px;
+						font-size: 20px;
+						margin-top: (($keeto-header-height-desktop - 50px)/2);
+					}
+
+					@include tablet()
+					{
+						padding-top: 15px;
+						padding-bottom: 15px;
+						margin-top: (($keeto-header-height-tablet - 50px)/2);
+					}
+				}
+			}
+
+			.active
+			{
+				a
+				{
+					&:hover,
+					&:focus
+					{
+						background-color: transparent;
+					}
+					border-bottom: 3px solid $keeto-yellow;
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,151 @@
+@import "keeto";
+
+.header-slider
+{
+	.slide
+	{
+		position: relative;
+		width: 100%;
+		background-size: cover;
+		//height: 150px;
+		height: 200px;
+
+		@include desktop()
+		{
+			height: 600px;
+		}
+
+		@include tablet()
+		{
+			height: 450px;
+		}
+
+		.heading
+		{
+			color: $keeto-white;
+			font-size: 12px;
+
+			@include desktop()
+			{
+				font-size: 20px;
+				width: 700px;
+				position: absolute;
+				bottom: 100px;
+				right: 20px;
+			}
+
+			@include tablet()
+			{
+				font-size: 20px;
+				width: 580px;
+				position: absolute;
+				bottom: 100px;
+				right: 60px;
+			}
+		}
+	}
+	.slide-first
+	{
+		@include desktop()
+		{
+			background: url('/static/img/slider-1-desktop.png') left center no-repeat;
+		}
+
+		@include tablet()
+		{
+			//background: url('/static/img/slider-1-tablet.png') left center no-repeat;
+			background: url('/static/img/testing/991x450.png') left center no-repeat;
+		}
+
+		//background: url('/static/img/slider-1-smartphone.png') left center no-repeat;
+		background: url('/static/img/testing/767x250.png') left center no-repeat;
+	}
+
+	.slide-second
+	{
+		@include desktop()
+		{
+			background: url('/static/img/slider-2-desktop.png') left center no-repeat;
+		}
+
+		@include tablet()
+		{
+			//background: url('/static/img/slider-2-tablet.png') left center no-repeat;
+			background: url('/static/img/testing/991x450.png') left center no-repeat;
+		}
+
+		//background: url('/static/img/slider-2-smartphone.png') left center no-repeat;
+		background: url('/static/img/testing/767x250.png') left center no-repeat;
+	}
+
+	.slide-third
+	{
+		@include desktop()
+		{
+			background: url('/static/img/slider-3-desktop.png') left center no-repeat;
+		}
+
+		@include tablet()
+		{
+			//background: url('/static/img/slider-3-tablet.png') left center no-repeat;
+			background: url('/static/img/testing/991x450.png') left center no-repeat;
+		}
+
+		//background: url('/static/img/slider-3-smartphone.png') left center no-repeat;
+		background: url('/static/img/testing/767x250.png') left center no-repeat;
+	}
+}
+
+.lSSlideOuter
+{
+	.lSPager
+	{
+		&.lSpg
+		{
+			>li
+			{
+				&.active
+				{
+					a
+					{
+						background-color: $keeto-yellow;
+					}
+				}
+
+				a
+				{
+					background-color: $keeto-purple;
+				}
+			}
+		}
+	}
+}
+
+.lSPager
+{
+	.lSpg
+	{
+		li
+		{
+			&.active
+			{
+				a
+				{
+					background-color: $keeto-yellow;
+				}
+			}
+			a
+			{
+				background-color: $keeto-purple;
+			}
+		}
+	}
+}
+
+.content-slider
+{
+	img
+	{
+		margin: 0 auto;
+	}
+}

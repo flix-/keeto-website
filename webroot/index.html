@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Sebastian Roland" />
+		<meta name="description" content="Central access management and secure key distribution for OpenSSH based on X.509 certificates" />
+
+		<title>Keeto - Central access management and secure key distribution for OpenSSH based on X.509 certificates</title>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="theme-color" content="#ffffff">
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:700|Exo+2">
+		<link rel="stylesheet" href="/static/css/frontend.css?rel=1478821076863">
+	</head>
+	<body id="scroll_top" data-spy="scroll" data-target="#navbar" data-offset="140">
+		<nav id="navbar" class="navbar navbar-inverse navbar-fixed-top showBorder">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="logo"><a href="#scroll_top"><img src="static/img/logo.png" alt="Keeto Logo"/></a></li>
+							<li class="heading text-uppercase"><a href="#scroll_about">About</a></li>
+							<li class="heading text-uppercase"><a href="#scroll_examples">Examples</a></li>
+							<li class="heading text-uppercase"><a href="https://keeto.readthedocs.io/en/latest/" target="_blank">Docs</a></li>
+							<li class="heading text-uppercase"><a href="#scroll_download">Download</a></li>
+							<li class="heading text-uppercase"><a href="#scroll_contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="header-slider flexslider">
+					<ul id="ls-header" class="slides">
+						<li>
+							<div class="slide slide-first">
+								<div class="heading text-uppercase">
+									Use X.509 certificates for OpenSSH and leverage PKI processes for managing the key material.
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="slide slide-second">
+								<div class="heading text-uppercase">Centrally manage access to OpenSSH Servers in an LDAP aware Directory Service.</div>
+							</div>
+						</li>
+						<li>
+							<div class="slide slide-third">
+								<div class="heading text-uppercase">Automatize the distribution and installation of OpenSSH key material.</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- START about section -->
+		<div id="scroll_about" class="container keeto-section">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2 class="text-center heading">Keeto?!</h2>
+				</div>
+			</div>
+			<div class="row top-buffer">
+				<div class="col-xs-12 col-md-6 text-justify">
+					<p><strong><em>Keeto</em> is a module for OpenSSH that enables profile-based administration of access permissions in a central LDAP aware Directory Service, adds support for X.509 certificates and handles the distribution of OpenSSH key material in an automated and secure manner.</strong></p>
+					<p>The fundamental idea behind is to leverage existing infrastructure usually found in larger enterprises for managing access to OpenSSH servers comprising the assignment and revocation of access permissions and the management of keys. In order to gain full advantage of <em>Keeto</em> a PKI and a Directory Service have to be present. Optionally a strong protection mechanism for private keys such as a Smartcard can be used to increase the level of security.</p>
+					Having all access permissions in a central repository highly simplifies its management with regards to the assignment/revocation and overview of permissions. <em>Keeto</em> represents access permissions through different access profile types that are assigned to OpenSSH servers centrally in an LDAP aware Directory Service such as OpenLDAP or Active Directory. Two different access profile types are supported enabling either direct access or access on behalf of another account.</p>
+					<p>Proper key management is vital to maintain the security of services. This comprises the secure generation of key material with approved tools and security parameters, the secure distribution and installation of keys and an appropriate key lifecycle management including the revocation, regeneration and removal of keys.</p>
+					<p>OpenSSH uses its own key format that solely consists of the data needed for the cryptographic operation during authentication. In comparison to X.509 certificates there is no binding to an identity, no integrity protection, no expiration and no mechanism for revocation.</p>
+				</div>
+				<div class="col-xs-12 col-md-6 text-justify">
+					<p>This properties can lead either to manual processes or insecure handling of the key material. In a worst case scenario OpenSSH keys are</p>
+					<ul>
+						<li>generated with unknown and unapproved tools using unsecure algorithms</li>
+						<li>distributed via non-integrity protected channels such as email or ticketing systems</li>
+						<li>not verified over an out of band channel before installation</li>
+						<li>deployed in an unsecure manner creating hard to detect backdoors</li>
+						<li>not regenerated in certain intervals</li>
+						<li>not in sync with actual access permissions</li>
+						<li>not revocable in a well-defined way</li>
+					</ul>
+					<p>Those issues can be mitigated with a product solely focussing on the management of OpenSSH keys. However if a PKI is present this will result in two extensive software layers and processes that need to be maintained for the management of key material.</p>
+					<p>Instead of managing OpenSSH keys himself <em>Keeto</em> introduces support for X.509 certificates to OpenSSH. As X.509 certificates are already managed by a PKI no new processes e.g. key generation, periodical regeneration or revocation have to be established. Furthermore the protocol between the SSH client and the OpenSSH server remains untouched. Every SSH aware client can be used transparently without any modification. The distribution and proper installation of OpenSSH keys is handled by <em>Keeto</em> on each connection attempt after access permissions and the X.509 certificate(s) have been successfully verified.</p>
+					<p><em>Keeto</em> hooks into the standard PAM interface making it relatively independent from changes to OpenSSH itself. This implies that no modification of the OpenSSH source code is needed in order to run <em>Keeto</em>.</p>
+				</div>
+			</div>
+			<div class="row top-buffer">
+				<div class="col-xs-12">
+					<img src="static/img/keeto-high-level-flow.png" class="img-responsive shrink-image" />
+				</div>
+			</div>
+		</div>
+		<!-- END about section -->
+
+		<!-- START examples section -->
+		<div id="scroll_examples" class="container keeto-section">
+			<div class="row top-buffer">
+				<div class="col-xs-12">
+					<h2 class="text-center heading">Profile Usage</h2>
+				</div>
+			</div>
+			<div class="row top-buffer">
+				<div class="col-xs-12 text-justify">
+					Once <em>Keeto</em> is setup access to OpenSSH servers is exclusively managed in an LDAP aware Directory Service. Access permissions are granted through access profiles which come in two flavors. A direct access profile grants access directly to the users account whereas an access on behalf profile grants access to a different account. The latter one is meaningful e.g. to allow specific users to access technical accounts. Optionally keystore options can be assigned to an access profile restricting the usage of the key to certain commands or IP addresses.
+				</div>
+			</div>
+			<div class="row top-buffer">
+				<div class="col-xs-12">
+					<ul id="examples-slider-dap" class="content-slider">
+						<li>
+							<img src="/static/img/examples-dap-1.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								All users that should have access to an OpenSSH server need an entity with a uid and certificate set. This is supposed to be already part of the DIT and managed by the PKI.
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-dap-2.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								For a direct access profile a group of key providers has to be specified. All users in this group can access the associated OpenSSH server(s) directly.
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-dap-3.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								A direct access profile is created and the group of key providers linked to it. Optionally keystore options can be added (see next example).
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-dap-4.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								Finally an OpenSSH server entry is created and the direct access profile linked. Note that an OpenSSH server entry can have an arbitrary amount of profiles associated.
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-dap-5.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								The user is now able to login. The keystore is installed in a way preventing it from non-privileged modifications.
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-dap-6.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								Every protocol that relies on SSH for authentication can be used. Here SFTP is used for secure file transfer.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row top-buffer">
+				<div class="col-xs-12">
+					<ul id="examples-slider-aobp" class="content-slider">
+						<li>
+							<img src="/static/img/examples-aobp-1.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								In this example another user 'keeto' is provided access to an OpenSSH server.
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-aobp-2.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								As an access on behalf profile is used technical accounts need to be present a user can use on behalf. Those accounts only need to have a uid.
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-aobp-3.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								Another technical account a user can use on behalf.
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-aobp-4.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								Keystore options can be used to restrict access to certain commands or locations.
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-aobp-5.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								A group with technical accounts is created. In terms of <em>Keeto</em> this is called a target keystore.
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-aobp-6.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								A group of users is created that can access the technical accounts in the target keystore group on behalf.
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-aobp-7.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								An access on behalf profile is created and the key provider group, the target keystore group and the keystore options are linked.
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-aobp-8.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								Finally the new access on behalf profile is linked to the OpenSSH server entry.
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-aobp-9.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								The user 'keeto' is now able to login on behalf of the technical account 'db2admin'.
+							</p>
+						</li>
+						<li>
+							<img src="/static/img/examples-aobp-10.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								'sebastian' is able to login on behalf of the technical account 'postgres'.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- END examples section -->
+
+		<!-- START download section -->
+		<div id="scroll_download" class="container keeto-section">
+			<div class="row top-buffer">
+				<div class="col-xs-12">
+					<h2 class="text-center heading">Get it!</h2>
+				</div>
+			</div>
+			<div class="row top-buffer">
+				<div class="col-xs-12 text-justify">
+					<p>
+						<em>Keeto</em> is released under the terms of the GPLv3 license and actively developed by Sebastian Roland. The source code is hosted at <a href="https://github.com/flix-/keeto" target="_blank"><i class="fa fa-github fa-2x"></i></a> and freely available for everyone. Information on how to install and configure <em>Keeto</em> can be obtained from the <a href="https://keeto.readthedocs.io/en/latest/" target="_blank">Docs</a>.
+					</p>
+					<ul class="nav nav-tabs top-buffer">
+						<!-- <li class="active"><a href="#download-030-beta" data-toggle="tab">0.3.0-beta</a></li> -->
+						<li class="active"><a href="#download-020-beta" data-toggle="tab">0.2.0-beta</a></li>
+					</ul>
+					<div class="tab-content">
+						<!-- 0.3.0-beta -->
+						<!-- <div class="tab-pane active top-buffer" id="download-030-beta">
+						   lorem ipsum
+					   </div> -->
+						<!-- 0.2.0-beta -->
+						<div class="tab-pane active top-buffer" id="download-020-beta">
+							<table>
+								<tr>
+									<td style="padding-right:10px"><h4><span class="label label-info">2016-11-01</span></h4></td>
+									<td style="padding-right:10px"><h4><a href="https://www.google.de" target="_blank" class="no-link-decoration"><span class="label label-info label-link">Changelog</span></a></h4></td>
+									<td style="padding-right:10px"><h4><a href="https://www.google.de" target="_blank" class="no-link-decoration"><span class="label label-info label-link">Github</span></a></h4></td>
+								</tr>
+							</table>
+							<div class="table-responsive">
+								<table class="table top-buffer">
+									<tr>
+										<td>.tgz</td>
+										<td><a href="http://www.google.de">keeto-0.2.0-beta.tar.gz</a></td>
+										<td>MD5: 9fc75f00314b837732cf030d60821abe<br>
+											SHA1: d5dad3e97f39bd48a4a4ece165207213497e92d7<br>
+											SHA256: d8ef262b94d7d81407531392a832ec89c8f253c264cbfecc6cd9bde35c2ef563
+										</td>
+									</tr>
+									<tr>
+										<td>.rpm</td>
+										<td>-</td>
+										<td>MD5: -<br>
+											SHA1: -<br>
+											SHA256: -
+										</td>
+									</tr>
+									<tr>
+										<td>.deb</td>
+										<td>-</td>
+										<td>MD5: -<br>
+											SHA1: -<br>
+											SHA256: -
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div> <!-- tab-content -->
+				</div>
+			</div>
+		</div>
+		<!-- END download section -->
+
+		<!-- START contact section -->
+		<div id="scroll_contact" class="container keeto-section contact">
+			<div class="row top-buffer">
+				<div class="col-xs-12 col-md-6">
+					<h2 class="text-center heading">Contact</h2>
+					<div class="text-justify top-buffer">
+						<p>You have a question, suggestion or just wanna say 'Hi'? Feel free to reach out!</p>
+
+						<div class="contact-info-box">
+							<div>
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+								<a href="mailto:info@keeto.io">info[at]<em>keeto</em>.io</a>
+							</div>
+							<div>
+								<i class="fa fa-hashtag" aria-hidden="true"></i>
+								#<em>keeto</em> @<a href="https://freenode.net/" target="_blank">freenode</a> or /query flix</a>
+							</div>
+							<div>
+								<i class="fa fa-github" aria-hidden="true"></i>
+								<a href="https://github.com/flix-/keeto" target="_blank">https://github.com/flix-/<em>keeto</em></a>
+							</div>
+							<div>
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+								<a href="https://twitter.com/keeto_io" target="_blank">https://twitter.com/<em>keeto</em>_io</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<h2 class="text-center heading">Contribute</h2>
+					<div class="text-justify top-buffer">
+						<p>You like the project and want to join? Your help is highly appreciated! Currently searching for:</p>
+						<ul>
+							<li>Packagers</li>
+							<li>Code reviewers</li>
+							<li>Test environments</li>
+							<li>Testers</li>
+							<li>Feedback</li>
+						</ul>
+
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+							<input type="hidden" name="cmd" value="_donations">
+							<input type="hidden" name="business" value="donation@keeto.io">
+							<input type="hidden" name="lc" value="GB">
+							<input type="hidden" name="item_name" value="Keeto">
+							<input type="hidden" name="no_note" value="0">
+							<input type="hidden" name="currency_code" value="EUR">
+							<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+							<p>No time for active participation but still would like to contribute?!<br>
+								Keep my mind focused and <input class="donate-btn label label-info label-link" type="submit" value="Donate" alt="PayPal – The safer, easier way to pay online!"> a coffee \o/</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END contact section -->
+
+		<footer class="footer">
+			<div class="container">
+				<p class="text-center"><i class="fa fa-copyright" aria-hidden="true"></i> 2016 Sebastian Roland</p>
+			</div>
+		</footer>
+
+		<script src="/static/js/vendor.min.js?rel=1478821076864"></script>
+		<script src="/static/js/keeto.min.js?rel=1478821076864"></script>
+	</body>
+</html>
