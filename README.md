@@ -28,3 +28,4 @@ The watcher process will take care to compile your changes to the CSS file(s).
 * Then do your changes in `js/frontend.js`.
 
 The watcher process will take care to compile your changes to the JS file(s).
+

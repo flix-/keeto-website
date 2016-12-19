@@ -146,3 +146,4 @@ module.exports = function(grunt)
 
 	grunt.registerTask('default', ['clean', 'modernizr', 'concat', 'uglify', 'copy', 'sass', 'cachebreaker']);
 };
+
