@@ -7,7 +7,6 @@
 		position: relative;
 		width: 100%;
 		background-size: cover;
-		//height: 150px;
 		height: 200px;
 
 		@include desktop()
@@ -17,30 +16,37 @@
 
 		@include tablet()
 		{
-			height: 450px;
+			height: 400px;
 		}
 
 		.heading
 		{
 			color: $keeto-white;
-			font-size: 12px;
+			font-size: 14px;
+			width: calc(100% - 80px);
+			margin: 0 auto;
+			padding-top: 113px;
 
 			@include desktop()
 			{
-				font-size: 20px;
-				width: 700px;
+				font-size: 28px;
+				width: 625px;
 				position: absolute;
-				bottom: 100px;
-				right: 20px;
+				top: 260px;
+				left: 307px;
+				padding-top: 0;
+				margin: 0;
 			}
 
 			@include tablet()
 			{
 				font-size: 20px;
-				width: 580px;
+				width: 505px;
 				position: absolute;
-				bottom: 100px;
-				right: 60px;
+				top: 198px;
+				left: 245px;
+				padding-top: 0;
+				margin: 0;
 			}
 		}
 	}
@@ -53,12 +59,10 @@
 
 		@include tablet()
 		{
-			//background: url('/static/img/slider-1-tablet.png') left center no-repeat;
-			background: url('/static/img/testing/991x450.png') left center no-repeat;
+			background: url('/static/img/slider-1-tablet.png') left center no-repeat;
 		}
 
-		//background: url('/static/img/slider-1-smartphone.png') left center no-repeat;
-		background: url('/static/img/testing/767x250.png') left center no-repeat;
+		background: url('/static/img/slider-1-smartphone.png') left center no-repeat;
 	}
 
 	.slide-second
@@ -70,12 +74,10 @@
 
 		@include tablet()
 		{
-			//background: url('/static/img/slider-2-tablet.png') left center no-repeat;
-			background: url('/static/img/testing/991x450.png') left center no-repeat;
+			background: url('/static/img/slider-2-tablet.png') left center no-repeat;
 		}
 
-		//background: url('/static/img/slider-2-smartphone.png') left center no-repeat;
-		background: url('/static/img/testing/767x250.png') left center no-repeat;
+		background: url('/static/img/slider-2-smartphone.png') left center no-repeat;
 	}
 
 	.slide-third
@@ -87,12 +89,10 @@
 
 		@include tablet()
 		{
-			//background: url('/static/img/slider-3-tablet.png') left center no-repeat;
-			background: url('/static/img/testing/991x450.png') left center no-repeat;
+			background: url('/static/img/slider-3-tablet.png') left center no-repeat;
 		}
 
-		//background: url('/static/img/slider-3-smartphone.png') left center no-repeat;
-		background: url('/static/img/testing/767x250.png') left center no-repeat;
+		background: url('/static/img/slider-3-smartphone.png') left center no-repeat;
 	}
 }
 
