@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$('a[href^="#scroll_"]').on('click', function(e) {
 		e.preventDefault();
 
-		var offset = 139;
+		var offset = 120;
 		var target = this.hash;
 		var $target = $(target);
 		var target_offset = $target.offset().top - offset;
