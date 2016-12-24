@@ -59,7 +59,7 @@
 			{
 				img
 				{
-					height: 75px;
+					height: 80px;
 				}
 
 				&.active
@@ -83,8 +83,9 @@
 						img
 						{
 							position: absolute;
-							height: 155px;
-							top: -30px;
+							height: auto;
+							top: -21px;
+							left: 40px;
 						}
 					}
 				}
@@ -103,8 +104,9 @@
 						img
 						{
 							position: absolute;
-							height: 155px;
-							top: -30px;
+							height: auto;
+							top: -21px;
+							left: 40px;
 						}
 					}
 				}
@@ -133,7 +135,7 @@
 					@include desktop()
 					{
 						padding-top: 15px;
-						padding-bottom: 15px;
+						padding-bottom: 12px;
 						font-size: 20px;
 						margin-top: (($keeto-header-height-desktop - 50px)/2);
 					}

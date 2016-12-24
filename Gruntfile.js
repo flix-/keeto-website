@@ -80,7 +80,7 @@ module.exports = function(grunt)
 				{
 					"outputStyle": 'compressed',
 					"includePaths": ['node_modules/lightslider/src/css', 'node_modules/font-awesome/css', 'node_modules/bootstrap-sass/assets/stylesheets'],
-					"sourceMap": true
+					"sourceMap": false
 				},
 
 				dist:
