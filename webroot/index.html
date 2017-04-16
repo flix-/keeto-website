@@ -19,7 +19,7 @@
 		<meta name="theme-color" content="#ffffff">
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:700|Exo+2">
-		<link rel="stylesheet" href="/static/css/frontend.css?rel=1489511282540">
+		<link rel="stylesheet" href="/static/css/frontend.css?rel=1492336239815">
         <!-- Piwik -->
         <script type="text/javascript">
             var _paq = _paq || [];
@@ -116,7 +116,7 @@
 						<li>not revocable in a well-defined way</li>
 					</ul>
 					<p>Those issues can be mitigated with a product solely focussing on the management of OpenSSH keys. However if a PKI is present this will result in two extensive software layers and processes that need to be maintained for the management of key material.</p>
-					<p>Instead of managing OpenSSH keys himself <em>Keeto</em> introduces support for X.509 certificates to OpenSSH. As X.509 certificates are already managed by a PKI no new processes e.g. key generation, periodical regeneration or revocation have to be established. Furthermore the protocol between the SSH client and the OpenSSH server remains untouched. Every SSH aware client can be used transparently without any modification. The distribution and proper installation of OpenSSH keys is handled by <em>Keeto</em> on each connection attempt after access permissions and the X.509 certificate(s) have been successfully verified.</p>
+					<p>Instead of managing OpenSSH keys himself <em>Keeto</em> introduces support for X.509 certificates to OpenSSH. As X.509 certificates are already managed by a PKI no new processes e.g. key generation, periodical regeneration or revocation have to be established. Furthermore the protocol between the SSH client and the OpenSSH server remains untouched. Every SSH aware client can be used transparently without any modification. The distribution and proper installation of OpenSSH keys is handled by <em>Keeto</em> on each connection attempt after access permissions and the X.509 certificates have been successfully verified.</p>
 					<p><em>Keeto</em> hooks into the standard PAM interface making it relatively independent from changes to OpenSSH itself. This implies that no modification of the OpenSSH source code is needed in order to run <em>Keeto</em>.</p>
 				</div>
 			</div>
@@ -146,35 +146,47 @@
 						<li>
 							<img src="/static/img/examples-dap-1.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								All users that should have access to an OpenSSH server need an entity with a uid and certificate set. This is supposed to be already part of the DIT and managed by the PKI.
+                                An SSH server entry is the starting point for the determination of access permissions and consists of various references to access profiles. It is identified by a unique identifier.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-dap-2.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								For a direct access profile a group of key providers has to be specified. All users in this group can access the associated OpenSSH server(s) directly.
+								A direct acess profile specifies key providers that shall have direct access to the OpenSSH server. In this example a group of key providers is referenced.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-dap-3.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								A direct access profile is created and the group of key providers linked to it. Optionally keystore options can be added (see next example).
+								The key provider group consists of references to people entries that provide the key material.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-dap-4.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								Finally an OpenSSH server entry is created and the direct access profile linked. Note that an OpenSSH server entry can have an arbitrary amount of profiles associated.
+								All key providers need an entity with a uid and certificate set. This is supposed to be already part of the DIT and managed by the PKI.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-dap-5.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								The user is now able to login. The keystore is installed in a way preventing it from non-privileged modifications.
+								Keystore options can be specified to restrict access to the OpenSSH server.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-dap-6.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								Access is only allowed from an IP address of the '192.168.118.0/28' network.
+							</p>
+						</li>
+                        <li>
+							<img src="/static/img/examples-dap-7.png" class="img-responsive">
+							<p class="text-center top-buffer">
+								The user 'birgit' is now able to login from the specified network. The keystore is installed in a way preventing it from non-privileged modifications.
+							</p>
+						</li>
+                        <li>
+							<img src="/static/img/examples-dap-8.png" class="img-responsive">
 							<p class="text-center top-buffer">
 								Every protocol that relies on SSH for authentication can be used. Here SFTP is used for secure file transfer.
 							</p>
@@ -188,61 +200,56 @@
 						<li>
 							<img src="/static/img/examples-aobp-1.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								In this example another user 'keeto' is provided access to an OpenSSH server.
+								In this example we will have a look on how access on behalf profiles are specified. Again we start with an SSH server entry.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-aobp-2.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								As an access on behalf profile is used technical accounts need to be present a user can use on behalf. Those accounts only need to have a uid.
+								Access on behalf profiles have target keystores. A target keystore determines the destination keystore that receives the key providers keys.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-aobp-3.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								Another technical account a user can use on behalf.
+								A target keystore entry only needs to have a uid set. This uid is compared against the uid of the user about to login during authentication.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-aobp-4.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								Keystore options can be used to restrict access to certain commands or locations.
+								The key provider group ultimately specifies the keys that are synced into the target keystore.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-aobp-5.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								A group with technical accounts is created. In terms of <em>Keeto</em> this is called a target keystore.
+								In this example there are two key providers 'sebastian' and 'bjoern'.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-aobp-6.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								A group of users is created that can access the technical accounts in the target keystore group on behalf.
+								Key provider entry from 'sebastian'...
 							</p>
 						</li>
+                        </li>
 						<li>
 							<img src="/static/img/examples-aobp-7.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								An access on behalf profile is created and the key provider group, the target keystore group and the keystore options are linked.
+								... and from 'bjoern'.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-aobp-8.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								Finally the new access on behalf profile is linked to the OpenSSH server entry.
+								The user 'sebastian' is now able to login on behalf of the account 'keeto'.
 							</p>
 						</li>
 						<li>
 							<img src="/static/img/examples-aobp-9.png" class="img-responsive">
 							<p class="text-center top-buffer">
-								The user 'keeto' is now able to login on behalf of the technical account 'db2admin'.
-							</p>
-						</li>
-						<li>
-							<img src="/static/img/examples-aobp-10.png" class="img-responsive">
-							<p class="text-center top-buffer">
-								'sebastian' is able to login on behalf of the technical account 'postgres'.
+								So is 'bjoern'...
 							</p>
 						</li>
 					</ul>
@@ -261,25 +268,63 @@
 			<div class="row top-buffer">
 				<div class="col-xs-12 text-justify">
 					<p>
-						<em>Keeto</em> is released under the terms of the GPLv3 license and actively developed by Sebastian Roland. The source code is hosted at <a href="https://github.com/flix-/keeto" target="_blank"><i class="fa fa-github fa-2x"></i></a> and freely available for everyone. Information on how to install and configure <em>Keeto</em> can be obtained from the Docs</a>.
+						<em>Keeto</em> is released under the terms of the GPLv3 license and actively developed by Sebastian Roland. The source code is hosted at <a href="https://github.com/flix-/keeto" target="_blank"><i class="fa fa-github fa-2x"></i></a> and freely available for everyone. Information on how to install and configure <em>Keeto</em> can be obtained from the <a href="https://keeto.readthedocs.io/en/0.3.0-beta/getting_started.html" target="_blank">Docs</a>.
 					</p>
+                    <p>
+                        You just wanna have a quick look without going through all the installation efforts? Check the <em>Keeto</em> Docker image! See the <a href="https://keeto.readthedocs.io/en/0.3.0-beta/docker.html" target="_blank">Docs</a> for all relevant information.
+                    </p>
 					<ul class="nav nav-tabs top-buffer">
-						<!-- <li class="active"><a href="#download-030-beta" data-toggle="tab">0.3.0-beta</a></li> -->
-						<li class="active"><a href="#download-020-beta" data-toggle="tab">0.2.0-beta</a></li>
+						<li class="active"><a href="#download-030-beta" data-toggle="tab">0.3.0-beta</a></li>
+						<li ><a href="#download-020-beta" data-toggle="tab">0.2.0-beta</a></li>
 					</ul>
 					<div class="tab-content">
 						<!-- 0.3.0-beta -->
-						<!-- <div class="tab-pane active top-buffer" id="download-030-beta">
-						   lorem ipsum
-					   </div> -->
+						<div class="tab-pane active top-buffer" id="download-030-beta">
+							<table>
+								<tr>
+									<td style="padding-right:10px"><h4><span class="label label-info">2017-04-15</span></h4></td>
+									<td style="padding-right:10px"><h4><a href="static/downloads/keeto-0.3.0-beta/ChangeLog" target="_blank" class="no-link-decoration"><span class="label label-info label-link">Changelog</span></a></h4></td>
+                                    <td style="padding-right:10px"><h4><a href="https://keeto.readthedocs.io/en/0.3.0-beta/" target="_blank" class="no-link-decoration"><span class="label label-info label-link">Docs</span></a></h4></td>
+									<td style="padding-right:0px"><h4><a href="https://github.com/flix-/keeto/tree/0.3.0-beta" target="_blank" class="no-link-decoration"><span class="label label-info label-link">Github</span></a></h4></td>
+								</tr>
+							</table>
+							<div class="table-responsive">
+								<table class="table top-buffer">
+									<tr>
+										<td>.tgz</td>
+										<td><a href="static/downloads/keeto-0.3.0-beta/keeto-0.3.0-beta.tar.gz" target="_blank">keeto-0.3.0-beta.tar.gz</a></td>
+										<td>MD5: becfb9a82110cfe516e73695b6ba3536<br>
+											SHA1: 29f71ef3b65a30607ab487dce194ce4f5aeb5c58<br>
+											SHA256: 5b4b28a3a350b8728d824210efe06179d9892ceb09ab6bf9116e8684c17fd98f
+										</td>
+									</tr>
+									<tr>
+										<td>.rpm</td>
+										<td><a href="static/downloads/keeto-0.3.0-beta/keeto-0.3.0-0.1.beta.el7.centos.x86_64.rpm" target="_blank">keeto-0.3.0-0.1.beta.el7.centos.x86_64.rpm</a></td></td>
+										<td>MD5: 82d5e3e4ad70d5b517bf7f098e60aabe<br>
+											SHA1: 15abc5b94b9bf30e939f48af92c49f358b84d853<br>
+											SHA256: 28726665a4f435e247366463b53e762dfad1fc91ada18421e56624216efbecbb
+										</td>
+									</tr>
+                                    <tr>
+										<td>.srpm</td>
+										<td><a href="static/downloads/keeto-0.3.0-beta/keeto-0.3.0-0.1.beta.el7.centos.src.rpm" target="_blank">keeto-0.3.0-0.1.beta.el7.centos.src.rpm</a></td></td>
+										<td>MD5: bbd57875a6e90a8d2a42dcbfeafd334e<br>
+											SHA1: 6b77a2b5941db92268633509598c7632055b7003<br>
+											SHA256: a9c08e4fd7212f03d83b46b55ac2818d495eeb794a2904acae29f3e2ebada42a
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
 						<!-- 0.2.0-beta -->
-						<div class="tab-pane active top-buffer" id="download-020-beta">
+						<div class="tab-pane top-buffer" id="download-020-beta">
 							<table>
 								<tr>
 									<td style="padding-right:10px"><h4><span class="label label-info">2016-12-24</span></h4></td>
 									<td style="padding-right:10px"><h4><a href="static/downloads/keeto-0.2.0-beta/ChangeLog" target="_blank" class="no-link-decoration"><span class="label label-info label-link">Changelog</span></a></h4></td>
                                     <td style="padding-right:10px"><h4><a href="https://keeto.readthedocs.io/en/0.2.0-beta/" target="_blank" class="no-link-decoration"><span class="label label-info label-link">Docs</span></a></h4></td>
-									<td style="padding-right:10px"><h4><a href="https://github.com/flix-/keeto/tree/0.2.0-beta" target="_blank" class="no-link-decoration"><span class="label label-info label-link">Github</span></a></h4></td>
+									<td style="padding-right:0px"><h4><a href="https://github.com/flix-/keeto/tree/0.2.0-beta" target="_blank" class="no-link-decoration"><span class="label label-info label-link">Github</span></a></h4></td>
 								</tr>
 							</table>
 							<div class="table-responsive">
@@ -351,9 +396,8 @@
 					<div class="text-justify top-buffer">
 						<p>You like the project and want to join? Your help is highly appreciated! Currently searching for:</p>
 						<ul>
-							<li>Packagers</li>
+							<li>Package maintainers</li>
 							<li>Code reviewers</li>
-							<li>Test environments</li>
 							<li>Testers</li>
 							<li>Feedback</li>
 						</ul>
@@ -381,8 +425,8 @@
 			</div>
 		</footer>
 
-		<script src="/static/js/vendor.min.js?rel=1489511282542"></script>
-		<script src="/static/js/keeto.min.js?rel=1489511282543"></script>
+		<script src="/static/js/vendor.min.js?rel=1492336239816"></script>
+		<script src="/static/js/keeto.min.js?rel=1492336239817"></script>
 	</body>
 </html>
 
