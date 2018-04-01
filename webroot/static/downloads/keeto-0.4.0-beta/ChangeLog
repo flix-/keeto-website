@@ -1,0 +1,48 @@
+[0.4.0-beta] - 2018-04-01
+-------------------------
+
+* Added logging of SSH key fingerprints.
+
+* Added export of real user to environment.
+
+* Added SSH session logging to Docker environment.
+
+
+[0.3.0-beta] - 2017-04-15
+-------------------------
+
+* Added support for linking key providers/target keystores directly
+  to an access profile rather than through groups only.
+
+* Added support for OpenSSL 1.1.
+
+* Added support for checking LDAP server certificate chain against CRL.
+
+* Added Docker testing/showcase environment.
+
+* Fixed timeout handling which was previously only supported for LDAP
+  search requests.
+
+* Improved LDAP search queries.
+
+* Improved error handling/logging.
+
+* Changed various attributes in LDAP schema from mandatory to optional.
+
+
+[0.2.0-beta] - 2016-12-24
+-------------------------
+
+* Added support for access profiles allowing a more flexible way for
+  the definition of access permissions in LDAP server.
+
+* Added support for CRL checking.
+
+* Added error handling.
+
+
+[0.1.0-beta] - 2016-01-01
+-------------------------
+
+* First release \o/
+

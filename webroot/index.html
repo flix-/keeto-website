@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="author" content="Sebastian Roland" />
 		<meta name="description" content="Central access management and secure key distribution for OpenSSH based on X.509 certificates" />
-		<meta name="keywords" content="Keeto, OpenSSH, SSH, X.509, Certificates, Access Management, Key Management, PAM, LDAP" />
+		<meta name="keywords" content="Keeto, OpenSSH, SSH, X.509, Certificates, Access Management, Key Management, PAM, LDAP, Audit" />
 
 		<title>Keeto - Key and Access Management for OpenSSH</title>
 
@@ -19,7 +19,7 @@
 		<meta name="theme-color" content="#ffffff">
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:700|Exo+2">
-		<link rel="stylesheet" href="/static/css/frontend.css?rel=1494617816785">
+		<link rel="stylesheet" href="/static/css/frontend.css?rel=1522612888832">
         <!-- Piwik -->
         <script type="text/javascript">
             var _paq = _paq || [];
@@ -274,12 +274,52 @@
                         You just wanna have a quick look without going through all the installation efforts? Check the <em>Keeto</em> <i class="fa fa-docker fa-2x"></i> image! See the <a href="https://keeto.readthedocs.io/en/0.3.0-beta/docker.html" target="_blank">Docs</a> for all relevant information.
                     </p>
 					<ul class="nav nav-tabs top-buffer">
-						<li class="active"><a href="#download-030-beta" data-toggle="tab">0.3.0-beta</a></li>
+						<li class="active"><a href="#download-040-beta" data-toggle="tab">0.4.0-beta</a></li>
+						<li ><a href="#download-030-beta" data-toggle="tab">0.3.0-beta</a></li>
 						<li ><a href="#download-020-beta" data-toggle="tab">0.2.0-beta</a></li>
 					</ul>
 					<div class="tab-content">
+						<!-- 0.4.0-beta -->
+						<div class="tab-pane active top-buffer" id="download-040-beta">
+							<table>
+								<tr>
+									<td style="padding-right:10px"><h4><span class="label label-info">2018-04-01</span></h4></td>
+									<td style="padding-right:10px"><h4><a href="static/downloads/keeto-0.4.0-beta/ChangeLog" target="_blank" class="no-link-decoration"><span class="label label-info label-link">Changelog</span></a></h4></td>
+                                    <td style="padding-right:10px"><h4><a href="https://keeto.readthedocs.io/en/0.4.0-beta/" target="_blank" class="no-link-decoration"><span class="label label-info label-link">Docs</span></a></h4></td>
+									<td style="padding-right:0px"><h4><a href="https://github.com/flix-/keeto/tree/0.4.0-beta" target="_blank" class="no-link-decoration"><span class="label label-info label-link">Github</span></a></h4></td>
+								</tr>
+							</table>
+							<div class="table-responsive">
+								<table class="table top-buffer">
+									<tr>
+										<td>.tgz</td>
+										<td><a href="static/downloads/keeto-0.4.0-beta/keeto-0.4.0-beta.tar.gz" target="_blank">keeto-0.4.0-beta.tar.gz</a></td>
+										<td>MD5: ee6ffe25d55a90c7e349fa629f0ac252<br>
+											SHA1: 8675440380b6145cfa6f1a08f8e1a58605056d39<br>
+											SHA256: 41bc5117bf2934c344e440188836dd670d10dbfb0130768e1b87e89af1fef116
+										</td>
+									</tr>
+									<tr>
+										<td>.rpm</td>
+										<td><a href="static/downloads/keeto-0.4.0-beta/keeto-0.4.0-0.1.beta.el7.centos.x86_64.rpm" target="_blank">keeto-0.4.0-0.1.beta.el7.centos.x86_64.rpm</a></td></td>
+										<td>MD5: 0e5c1ccd6235d594bbe841eee0a871b9<br>
+											SHA1: c0fe491d05f81b5169c1641482bd408275d41496<br>
+											SHA256: 3f757435508ee4878fca6ae2e07b86a533bed9ed642915bab56187fd1fc6960d
+										</td>
+									</tr>
+                                    <tr>
+										<td>.srpm</td>
+										<td><a href="static/downloads/keeto-0.4.0-beta/keeto-0.4.0-0.1.beta.el7.centos.src.rpm" target="_blank">keeto-0.4.0-0.1.beta.el7.centos.src.rpm</a></td></td>
+										<td>MD5: 01bbf8ae8ad3fffeebe4af0d7f6584a1<br>
+											SHA1: fb0287a7c97a3d065ba3bc0c1091f94f8f0438bb<br>
+											SHA256: bff8d65d2dafe32bc8462d07447a80313c01f5c465c8a79f8dc0e9c88227f3d0
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
 						<!-- 0.3.0-beta -->
-						<div class="tab-pane active top-buffer" id="download-030-beta">
+						<div class="tab-pane top-buffer" id="download-030-beta">
 							<table>
 								<tr>
 									<td style="padding-right:10px"><h4><span class="label label-info">2017-04-15</span></h4></td>
@@ -421,12 +461,11 @@
 
 		<footer class="footer">
 			<div class="container">
-				<p class="text-center"><i class="fa fa-copyright" aria-hidden="true"></i> 2016-2017 Sebastian Roland</p>
+				<p class="text-center"><i class="fa fa-copyright" aria-hidden="true"></i> 2016-2018 Sebastian Roland</p>
 			</div>
 		</footer>
 
-		<script src="/static/js/vendor.min.js?rel=1494617816785"></script>
-		<script src="/static/js/keeto.min.js?rel=1494617816786"></script>
+		<script src="/static/js/vendor.min.js?rel=1522612888833"></script>
+		<script src="/static/js/keeto.min.js?rel=1522612888834"></script>
 	</body>
 </html>
-

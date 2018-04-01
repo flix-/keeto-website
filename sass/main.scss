@@ -9,6 +9,10 @@
 @import "download_section.scss";
 @import "contact_section.scss";
 
+:focus {
+	outline: 0;
+}
+
 body
 {
 	font-family: 'Exo 2', sans-serif;
